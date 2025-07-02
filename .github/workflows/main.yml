@@ -14,28 +14,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v2
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: '20.x'
+          bun-version: 'latest' # o fija una versión como '1.1.8'
 
       - name: Install dependencies
-        run: npm install
+        run: bun install
 
       # 1) Type check
       - name: Type check
-        run: |
-          npm run type-check
+        run: bun run type-check
 
       # 2) Lint check
       - name: Lint check
-        run: |
-          npm run lint
+        run: bun run lint
 
-      # 3) test check
+      # 3) Test check
       - name: Run tests
-        run: |
-          npm run test-report
+        run: bun run test-report
 
       - name: Upload coverage to comment
         if: always()
@@ -46,5 +43,4 @@ jobs:
 
       # Add your deployment steps here
       - name: Deploy
-        run: |
-          npm run build
+        run: bun run build
