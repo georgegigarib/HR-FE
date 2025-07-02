@@ -6,7 +6,7 @@
     <ThemeSwitchTwo :size="30" />
     <h3>
       <div class="bg-accent rounded-xl dark:bg-secondary">
-        hola amigo
+        hola amigos
         <br />
       </div>
       You’ve successfully created a project with
