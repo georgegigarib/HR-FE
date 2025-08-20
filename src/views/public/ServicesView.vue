@@ -39,16 +39,16 @@
           <!-- Auth Buttons -->
           <div class="flex items-center space-x-4">
             <router-link
-              to="/auth/login"
+              to="/login"
               class="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              {{ $t('auth.login') }}
+              {{ $t('auth.login.title') }}
             </router-link>
             <BaseButton
               variant="primary"
-              @click="$router.push('/auth/register')"
+              @click="$router.push('/register')"
             >
-              {{ $t('auth.register') }}
+              {{ $t('auth.register.title') }}
             </BaseButton>
           </div>
         </div>
@@ -67,7 +67,7 @@
         <BaseButton
           variant="primary"
           size="lg"
-          @click="$router.push('/auth/register')"
+          @click="$router.push('/register')"
         >
           {{ $t('services.hero.cta') }}
         </BaseButton>
@@ -368,7 +368,7 @@
           <BaseButton
             variant="secondary"
             size="lg"
-            @click="$router.push('/auth/register')"
+            @click="$router.push('/register')"
           >
             {{ $t('services.cta.primary') }}
           </BaseButton>

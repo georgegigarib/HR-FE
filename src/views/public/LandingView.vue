@@ -39,16 +39,16 @@
           <!-- Auth Buttons -->
           <div class="flex items-center space-x-4">
             <router-link
-              to="/auth/login"
+              to="/login"
               class="text-gray-600 hover:text-gray-900 transition-colors"
             >
-              {{ $t('auth.login') }}
+              {{ $t('auth.login.title') }}
             </router-link>
             <BaseButton
               variant="primary"
-              @click="$router.push('/auth/register')"
+              @click="$router.push('/register')"
             >
-              {{ $t('auth.register') }}
+              {{ $t('auth.register.title') }}
             </BaseButton>
           </div>
           
@@ -88,7 +88,7 @@
             </router-link>
             <div class="pt-4 border-t border-gray-200 space-y-2">
               <router-link
-                to="/auth/login"
+                to="/login"
                 class="block text-gray-600 hover:text-gray-900 transition-colors"
                 @click="mobileMenuOpen = false"
               >
@@ -97,7 +97,7 @@
               <BaseButton
                 variant="primary"
                 full-width
-                @click="$router.push('/auth/register'); mobileMenuOpen = false"
+                @click="$router.push('/register'); mobileMenuOpen = false"
               >
                 {{ $t('auth.register') }}
               </BaseButton>
@@ -127,7 +127,7 @@
               <BaseButton
                 variant="primary"
                 size="lg"
-                @click="$router.push('/auth/register')"
+                @click="$router.push('/register')"
               >
                 {{ $t('landing.hero.cta.primary') }}
               </BaseButton>
@@ -383,7 +383,7 @@
           <BaseButton
             variant="secondary"
             size="lg"
-            @click="$router.push('/auth/register')"
+            @click="$router.push('/register')"
           >
             {{ $t('landing.cta.primary') }}
           </BaseButton>

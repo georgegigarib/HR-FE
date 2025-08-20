@@ -11,6 +11,7 @@ import ResetPassword from '@/views/auth/ResetPasswordView.vue';
 import Services from '@/views/public/ServicesView.vue';
 import Help from '@/views/public/HelpView.vue';
 import Pricing from '@/views/public/PricingView.vue';
+import DashboardLayout from '@/components/layouts/DashboardLayout.vue';
 import AdminDashboard from '@/views/dashboard/AdminDashboardView.vue';
 import EmployeeDashboard from '@/views/dashboard/EmployeeDashboardView.vue';
 import AccountSettings from '@/views/dashboard/AccountSettingsView.vue';
@@ -75,77 +76,131 @@ const router = createRouter({
       meta: { requiresAuth: false, requiresGuest: true, title: 'Restablecer Contraseña' }
     },
     
-    // Dashboards
+    // Rutas autenticadas con layout
     {
-      path: '/admin/dashboard',
-      name: 'admin-dashboard',
-      component: AdminDashboard,
-      meta: { requiresAuth: true, requiresRole: UserRole.ADMIN, title: 'Dashboard Admin' }
-    },
-    {
-      path: '/employee/dashboard',
-      name: 'employee-dashboard',
-      component: EmployeeDashboard,
-      meta: { requiresAuth: true, requiresRole: UserRole.EMPLOYEE, title: 'Dashboard Empleado' }
+      path: '/dashboard',
+      component: DashboardLayout,
+      meta: { requiresAuth: true },
+      children: [
+        // Redirección automática basada en rol
+        {
+          path: '',
+          redirect: (to) => {
+            const authStore = useAuthStore();
+            if (authStore.isAdmin) {
+              return { name: 'admin-dashboard' };
+            } else if (authStore.isEmployee) {
+              return { name: 'employee-dashboard' };
+            }
+            return { name: 'login' };
+          }
+        },
+        // Configuración
+        {
+          path: 'settings',
+          name: 'account-settings',
+          component: AccountSettings,
+          meta: { requiresAuth: true, title: 'Configuración de Cuenta' }
+        },
+        // Gestión de empleados (solo admin)
+        {
+          path: 'employees',
+          name: 'employee-management',
+          component: EmployeeManagement,
+          meta: { requiresAuth: true, requiresRole: UserRole.ADMIN, title: 'Gestión de Empleados' }
+        }
+      ]
     },
     
-    // Configuración
+    // Dashboards
     {
-      path: '/settings/account',
-      name: 'account-settings',
-      component: AccountSettings,
-      meta: { requiresAuth: true, title: 'Configuración de Cuenta' }
+      path: '/admin',
+      component: DashboardLayout,
+      meta: { requiresAuth: true, requiresRole: UserRole.ADMIN },
+      children: [
+        {
+          path: 'dashboard',
+          name: 'admin-dashboard',
+          component: AdminDashboard,
+          meta: { requiresAuth: true, requiresRole: UserRole.ADMIN, title: 'Dashboard Admin' }
+        }
+      ]
     },
-
+    {
+      path: '/employee',
+      component: DashboardLayout,
+      meta: { requiresAuth: true, requiresRole: UserRole.EMPLOYEE },
+      children: [
+        {
+          path: 'dashboard',
+          name: 'employee-dashboard',
+          component: EmployeeDashboard,
+          meta: { requiresAuth: true, requiresRole: UserRole.EMPLOYEE, title: 'Dashboard Empleado' }
+        }
+      ]
+    },
     
     // Proceso de reclutamiento
     {
-      path: '/recruitment/start',
-      name: 'start-recruitment',
-      component: StartRecruitment,
-      meta: { requiresAuth: true, title: 'Iniciar Reclutamiento' }
-    },
-    {
-      path: '/recruitment/upload',
-      name: 'upload-resumes',
-      component: UploadResumes,
-      meta: { requiresAuth: true, title: 'Subir CVs' }
-    },
-    {
-      path: '/recruitment/processing',
-      name: 'processing-results',
-      component: ProcessingResults,
-      meta: { requiresAuth: true, title: 'Procesamiento y Resultados' }
+      path: '/recruitment',
+      component: DashboardLayout,
+      meta: { requiresAuth: true },
+      children: [
+        {
+          path: 'step-1',
+          name: 'start-recruitment',
+          component: StartRecruitment,
+          meta: { requiresAuth: true, title: 'Iniciar Reclutamiento' }
+        },
+        {
+          path: 'step-2',
+          name: 'upload-resumes',
+          component: UploadResumes,
+          meta: { requiresAuth: true, title: 'Subir CVs' }
+        },
+        {
+          path: 'step-3',
+          name: 'processing-results',
+          component: ProcessingResults,
+          meta: { requiresAuth: true, title: 'Procesamiento y Resultados' }
+        }
+      ]
     },
 
     {
       path: '/candidate/:id/report',
       name: 'candidate-report',
-      component: CandidateReport,
+      component: DashboardLayout,
       meta: { requiresAuth: true, title: 'Reporte de Candidato' },
-      props: true
+      children: [
+        {
+          path: '',
+          component: CandidateReport,
+          props: true
+        }
+      ]
     },
     
-    // Gestión de empleados (solo admin)
+    // Redirecciones de compatibilidad
+    {
+      path: '/recruitment/start',
+      redirect: { name: 'start-recruitment' }
+    },
+    {
+      path: '/recruitment/upload',
+      redirect: { name: 'upload-resumes' }
+    },
+    {
+      path: '/recruitment/processing',
+      redirect: { name: 'processing-results' }
+    },
+    {
+      path: '/settings/account',
+      redirect: { name: 'account-settings' }
+    },
     {
       path: '/admin/employees',
-      name: 'employee-management',
-      component: EmployeeManagement,
-      meta: { requiresAuth: true, requiresRole: UserRole.ADMIN, title: 'Gestión de Empleados' }
-    },
-    
-    // Redirecciones
-    {
-      path: '/dashboard',
-      redirect: (to) => {
-        const authStore = useAuthStore();
-        if (authStore.isAdmin) {
-          return { name: 'admin-dashboard' };
-        } else if (authStore.isEmployee) {
-          return { name: 'employee-dashboard' };
-        }
-        return { name: 'login' };
-      }
+      redirect: { name: 'employee-management' }
     },
     
     // Error 404 - redirect to home for now

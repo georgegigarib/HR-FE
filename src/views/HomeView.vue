@@ -15,14 +15,14 @@
             <BaseButton
               variant="primary"
               size="lg"
-              @click="router.push('/auth/register')"
+              @click="router.push('/register')"
             >
               {{ $t('landing.hero.cta') }}
             </BaseButton>
             <BaseButton
               variant="outline"
               size="lg"
-              @click="router.push('/auth/login')"
+              @click="router.push('/login')"
             >
               {{ $t('landing.hero.demo') }}
             </BaseButton>
@@ -144,7 +144,7 @@
         <BaseButton
           variant="secondary"
           size="lg"
-          @click="$router.push('/auth/register')"
+          @click="$router.push('/register')"
         >
           {{ $t('landing.cta.button') }}
         </BaseButton>

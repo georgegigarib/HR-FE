@@ -602,7 +602,7 @@ const handleLogout = async () => {
   try {
     await authStore.logout();
     toast.success(t('auth.messages.logoutSuccess'));
-    router.push('/auth/login');
+    router.push('/login');
   } catch (error) {
     toast.error(t('auth.messages.logoutError'));
   }

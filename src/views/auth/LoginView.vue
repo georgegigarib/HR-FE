@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
     <!-- Background decorative elements -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-600/20 rounded-full blur-3xl"></div>
@@ -25,7 +25,7 @@
       </div>
 
       <!-- Login Form -->
-      <BaseCard class="mt-8 backdrop-blur-sm bg-white/80 border-0 shadow-2xl" padding="xl">
+      <BaseCard class="mt-8 backdrop-blur-sm bg-white/80 border-0 shadow-2xl">
         <form @submit.prevent="handleLogin" class="space-y-7">
           <!-- Email -->
           <div class="transform transition-all duration-300 hover:scale-[1.02]">
@@ -33,7 +33,6 @@
               v-model="form.email"
               type="email"
               :label="$t('auth.fields.email')"
-              :placeholder="$t('auth.placeholders.email')"
               :error="errors.email"
               required
               autocomplete="email"
@@ -71,7 +70,7 @@
 
             <div class="text-sm">
               <router-link
-                to="/auth/forgot-password"
+                to="/forgot-password"
                 class="font-semibold text-blue-600 hover:text-blue-700 transition-all duration-200 hover:underline underline-offset-2"
               >
                 {{ $t('auth.login.forgotPassword') }}
@@ -112,7 +111,7 @@
           <p class="text-base text-gray-600">
             {{ $t('auth.login.noAccount') }}
             <router-link
-              to="/auth/register"
+              to="/register"
               class="font-semibold text-blue-600 hover:text-blue-700 transition-all duration-200 hover:underline underline-offset-2 ml-1"
             >
               {{ $t('auth.login.signUp') }}
@@ -177,9 +176,22 @@ const handleLogin = async () => {
     
     toast.success(t('auth.login.success'));
     
-    // Redirect based on user role
-    const redirectPath = authStore.user?.role === 'admin' ? '/dashboard/admin' : '/dashboard/employee';
-    router.push(redirectPath);
+    // Check for redirect parameter in query string
+    const redirectTo = router.currentRoute.value.query.redirect as string;
+    
+    if (redirectTo) {
+      router.push(redirectTo);
+    } else {
+      // Redirect based on user role using computed properties
+      if (authStore.isAdmin) {
+        router.push('/admin/dashboard');
+      } else if (authStore.isEmployee) {
+        router.push('/employee/dashboard');
+      } else {
+        // Fallback to home if role is not recognized
+        router.push('/');
+      }
+    }
   } catch (error: any) {
     toast.error(error.message || t('auth.login.error'));
   }

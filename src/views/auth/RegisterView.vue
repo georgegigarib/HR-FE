@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
     <!-- Background decorative elements -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-600/20 rounded-full blur-3xl"></div>
@@ -48,7 +48,7 @@
       </div>
 
       <!-- Registration Form -->
-      <BaseCard class="mt-8 backdrop-blur-sm bg-white/80 border-0 shadow-2xl" padding="xl">
+      <BaseCard class="mt-8 backdrop-blur-sm bg-white/80 border-0 shadow-2xl" padding="lg">
         <!-- Step 1: Basic Information -->
         <form v-if="currentStep === 1" @submit.prevent="handleStep1" class="space-y-6">
           <!-- Full Name -->
@@ -99,7 +99,6 @@
               v-model="form.email"
               type="email"
               :label="$t('auth.fields.email')"
-              :placeholder="$t('auth.placeholders.email')"
               :error="errors.email"
               required
               autocomplete="email"
@@ -163,7 +162,7 @@
               <button
                 type="button"
                 @click="form.role = 'admin'"
-                :class="roleButtonClasses('admin')"
+                :class="roleCardClasses('admin')"
                 class="group p-6 border-2 rounded-2xl text-center transition-all duration-300 hover:shadow-xl transform hover:scale-105 bg-gradient-to-br from-white to-gray-50"
               >
                 <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">👑</div>
@@ -173,7 +172,7 @@
               <button
                 type="button"
                 @click="form.role = 'employee'"
-                :class="roleButtonClasses('employee')"
+                :class="roleCardClasses('employee')"
                 class="group p-6 border-2 rounded-2xl text-center transition-all duration-300 hover:shadow-xl transform hover:scale-105 bg-gradient-to-br from-white to-gray-50"
               >
                 <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">👤</div>
@@ -269,7 +268,7 @@
           <p class="text-base text-gray-700 font-medium">
             {{ $t('auth.register.alreadyHaveAccount') }}
             <router-link
-              to="/auth/login"
+              to="/login"
               class="font-bold text-blue-600 hover:text-blue-700 transition-all duration-300 hover:underline ml-2 transform hover:scale-105 inline-block"
             >
               {{ $t('auth.register.signIn') }}
@@ -427,7 +426,7 @@ const handleStep2 = async () => {
     toast.success(t('auth.register.success'));
     
     // Redirect to login
-    router.push('/auth/login');
+    router.push('/login');
   } catch (error: any) {
     toast.error(error.message || t('auth.register.error'));
   }

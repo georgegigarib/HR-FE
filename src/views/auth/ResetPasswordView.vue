@@ -69,7 +69,7 @@
             <BaseButton
               variant="primary"
               size="md"
-              @click="$router.push('/auth/login')"
+              @click="$router.push('/login')"
             >
               {{ $t('auth.resetPassword.goToLogin') }}
             </BaseButton>
@@ -79,7 +79,7 @@
         <!-- Back to Login -->
         <div v-if="!passwordReset" class="mt-6 text-center">
           <router-link
-            to="/auth/login"
+            to="/login"
             class="text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors flex items-center justify-center"
           >
             <ArrowLeftIcon class="w-4 h-4 mr-1" />
@@ -123,7 +123,7 @@ onMounted(() => {
   
   if (!token.value) {
     toast.error(t('auth.resetPassword.invalidToken'));
-    router.push('/auth/login');
+    router.push('/login');
   }
 });
 

@@ -1,56 +1,5 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex items-center">
-            <h1 class="text-2xl font-bold text-gray-900">
-              {{ $t('dashboard.employee.title') }}
-            </h1>
-          </div>
-          
-          <div class="flex items-center space-x-4">
-            <!-- User Menu -->
-            <div class="relative">
-              <button
-                @click="showUserMenu = !showUserMenu"
-                class="flex items-center space-x-2 text-sm font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-3 py-2"
-              >
-                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                  <span class="text-white text-sm font-medium">
-                    {{ userInitials }}
-                  </span>
-                </div>
-                <span>{{ authStore.user?.firstName }} {{ authStore.user?.lastName }}</span>
-                <ChevronDownIcon class="w-4 h-4" />
-              </button>
-              
-              <!-- Dropdown Menu -->
-              <div
-                v-if="showUserMenu"
-                class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-200"
-              >
-                <router-link
-                  to="/dashboard/settings"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  @click="showUserMenu = false"
-                >
-                  {{ $t('dashboard.menu.settings') }}
-                </router-link>
-                <button
-                  @click="handleLogout"
-                  class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  {{ $t('dashboard.menu.logout') }}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
       <!-- Welcome Message -->
@@ -60,7 +9,7 @@
             <div class="flex-shrink-0">
               <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
                 <span class="text-white text-lg font-bold">
-                  {{ userInitials }}
+                  {{ authStore.user?.firstName?.charAt(0) }}{{ authStore.user?.lastName?.charAt(0) }}
                 </span>
               </div>
             </div>
@@ -226,7 +175,6 @@ import {
   DocumentTextIcon,
   ChartBarIcon,
   BriefcaseIcon,
-  ChevronDownIcon,
   ChevronRightIcon
 } from '@heroicons/vue/24/outline';
 import { useAuthStore } from '@/stores/auth';
@@ -238,7 +186,7 @@ const { t } = useI18n();
 const router = useRouter();
 const authStore = useAuthStore();
 
-const showUserMenu = ref(false);
+// Removed showUserMenu as it's now handled by DashboardLayout
 
 const stats = ref({
   processedCvs: 45,
@@ -270,11 +218,7 @@ const recentProcesses = ref([
   }
 ]);
 
-const userInitials = computed(() => {
-  const user = authStore.user;
-  if (!user?.firstName || !user?.lastName) return 'AD';
-  return `${user.firstName[0]}${user.lastName[0]}`.toUpperCase();
-});
+// Removed userInitials as it's now handled by DashboardLayout
 
 const formatDate = (date: Date): string => {
   const now = new Date();
@@ -304,16 +248,7 @@ const getStatusVariant = (status: string): 'default' | 'primary' | 'secondary' |
   }
 };
 
-const handleLogout = async () => {
-  try {
-    await authStore.logout();
-    toast.success(t('auth.logout.success'));
-    router.push('/auth/login');
-  } catch (error: any) {
-    toast.error(error.message || t('auth.logout.error'));
-  }
-  showUserMenu.value = false;
-};
+// Removed handleLogout as it's now handled by DashboardLayout
 
 onMounted(() => {
   // Load dashboard data

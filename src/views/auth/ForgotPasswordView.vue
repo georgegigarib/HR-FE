@@ -19,7 +19,6 @@
             v-model="form.email"
             type="email"
             :label="$t('auth.fields.email')"
-            :placeholder="$t('auth.placeholders.email')"
             :error="errors.email"
             required
             autocomplete="email"
@@ -67,7 +66,7 @@
         <!-- Back to Login -->
         <div class="mt-6 text-center">
           <router-link
-            to="/auth/login"
+            to="/login"
             class="text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors flex items-center justify-center"
           >
             <ArrowLeftIcon class="w-4 h-4 mr-1" />

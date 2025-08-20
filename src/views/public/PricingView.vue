@@ -39,16 +39,16 @@
           <!-- Auth Buttons -->
           <div class="flex items-center space-x-4">
             <router-link
-              to="/auth/login"
+              to="/login"
               class="text-gray-600 hover:text-gray-900 transition-colors"
             >
               {{ $t('auth.login') }}
             </router-link>
             <BaseButton
               variant="primary"
-              @click="$router.push('/auth/register')"
+              @click="$router.push('/register')"
             >
-              {{ $t('auth.register') }}
+              {{ $t('auth.register.title') }}
             </BaseButton>
           </div>
         </div>
@@ -352,16 +352,36 @@
                     {{ feature.name }}
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-gray-600">
-                    <component :is="getFeatureIcon(feature.trial)" :value="feature.trial" />
+                    <component 
+                      v-if="typeof feature.trial === 'boolean'"
+                      :is="getFeatureIcon(feature.trial)" 
+                      :class="feature.trial ? 'w-5 h-5 text-green-500 mx-auto' : 'w-5 h-5 text-red-500 mx-auto'"
+                    />
+                    <span v-else class="font-medium text-gray-900">{{ feature.trial }}</span>
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-gray-600">
-                    <component :is="getFeatureIcon(feature.starter)" :value="feature.starter" />
+                    <component 
+                      v-if="typeof feature.starter === 'boolean'"
+                      :is="getFeatureIcon(feature.starter)" 
+                      :class="feature.starter ? 'w-5 h-5 text-green-500 mx-auto' : 'w-5 h-5 text-red-500 mx-auto'"
+                    />
+                    <span v-else class="font-medium text-gray-900">{{ feature.starter }}</span>
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-gray-600 bg-blue-50">
-                    <component :is="getFeatureIcon(feature.professional)" :value="feature.professional" />
+                    <component 
+                      v-if="typeof feature.professional === 'boolean'"
+                      :is="getFeatureIcon(feature.professional)" 
+                      :class="feature.professional ? 'w-5 h-5 text-green-500 mx-auto' : 'w-5 h-5 text-red-500 mx-auto'"
+                    />
+                    <span v-else class="font-medium text-gray-900">{{ feature.professional }}</span>
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-gray-600">
-                    <component :is="getFeatureIcon(feature.enterprise)" :value="feature.enterprise" />
+                    <component 
+                      v-if="typeof feature.enterprise === 'boolean'"
+                      :is="getFeatureIcon(feature.enterprise)" 
+                      :class="feature.enterprise ? 'w-5 h-5 text-green-500 mx-auto' : 'w-5 h-5 text-red-500 mx-auto'"
+                    />
+                    <span v-else class="font-medium text-gray-900">{{ feature.enterprise }}</span>
                   </td>
                 </tr>
               </tbody>
@@ -425,7 +445,7 @@
           <BaseButton 
             variant="secondary" 
             size="lg"
-            @click="$router.push('/auth/register')"
+            @click="$router.push('/register')"
           >
             {{ $t('pricing.cta.startTrial') }}
           </BaseButton>
@@ -447,7 +467,7 @@
 import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
-import { CheckIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
+import { CheckIcon, XMarkIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
 import BaseButton from '@/components/ui/BaseButton.vue';
 import BaseCard from '@/components/ui/BaseCard.vue';
 import { toast } from 'vue3-toastify';
@@ -540,10 +560,12 @@ const pricingFAQs = computed(() => [
 
 const getFeatureIcon = (value: any) => {
   if (typeof value === 'boolean') {
-    return value ? 'CheckIcon' : 'XMarkIcon';
+    return value ? CheckIcon : XMarkIcon;
   }
-  return 'FeatureValue';
+  return 'span';
 };
+
+
 
 const toggleFAQ = (id: string) => {
   const index = openFAQs.value.indexOf(id);
@@ -556,7 +578,7 @@ const toggleFAQ = (id: string) => {
 
 const selectPlan = (plan: string) => {
   toast.success(t('pricing.messages.planSelected', { plan }));
-  router.push('/auth/register');
+  router.push('/register');
 };
 
 const contactSales = () => {
