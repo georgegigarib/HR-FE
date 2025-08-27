@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, nextTick } from 'vue';
+import { computed, ref } from 'vue';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/vue/24/outline';
 
 interface Props {
@@ -115,7 +115,7 @@ const togglePasswordVisibility = () => {
   internalType.value = internalType.value === 'password' ? 'text' : 'password';
 };
 
-const baseClasses = 'block w-full rounded-lg border transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-0';
+const baseClasses = 'block w-full rounded-lg border transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-0 text-black';
 
 const sizeClasses = computed(() => {
   switch (props.size) {

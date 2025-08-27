@@ -73,7 +73,7 @@
               v-model="searchQuery"
               type="text"
               :placeholder="$t('help.search.placeholder')"
-              class="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              class="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
               @input="filterFAQs"
             />
           </div>
