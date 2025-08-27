@@ -7,7 +7,7 @@ import { help } from './en/help/en.help.local'
 import { landing } from './en/landing/en.landing.local'
 import { navigation } from './en/en.navigation.local'
 import { pricing } from './en/en.pricing.local'
-import { recruitment } from './en/en.recruitment.local'
+import { recruitment } from './en/recruitment/en.recruitment.local'
 import { roles } from './en/en.roles.local'
 import { services } from './en/services/en.services.local'
 
