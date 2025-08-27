@@ -36,7 +36,7 @@
               :error="errors.email"
               required
               autocomplete="email"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
@@ -50,7 +50,7 @@
               :error="errors.password"
               required
               autocomplete="current-password"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
