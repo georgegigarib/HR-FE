@@ -1,5 +1,5 @@
 import { account } from './en/account/en.account.local'
-import { auth } from './en/en.auth.local'
+import { auth } from './en/auth/en.auth.local'
 import { common } from './en/en.common.local'
 import { dashboard } from './en/en.dashboard.local'
 import { employees } from './en/en.employees.local'
