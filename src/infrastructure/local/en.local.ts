@@ -1,4 +1,4 @@
-import { account } from './en/en.account.local'
+import { account } from './en/account/en.account.local'
 import { auth } from './en/en.auth.local'
 import { common } from './en/en.common.local'
 import { dashboard } from './en/en.dashboard.local'
