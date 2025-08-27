@@ -1,7 +1,7 @@
 import { account } from './en/account/en.account.local'
 import { auth } from './en/auth/en.auth.local'
 import { common } from './en/en.common.local'
-import { dashboard } from './en/en.dashboard.local'
+import { dashboard } from './en/dashboard/en.dashboard.local'
 import { employees } from './en/en.employees.local'
 import { help } from './en/en.help.local'
 import { landing } from './en/en.landing.local'
