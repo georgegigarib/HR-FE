@@ -1,4 +1,5 @@
 import { roles } from './en/en.roles.local'
+import { navigation } from './en/en.navigation.local'
 
 export const en = {
   hello: 'hello world george speaking',
@@ -6,15 +7,7 @@ export const en = {
     name: 'HR Platform'
   },
   roles,
-  navigation: {
-    services: 'Services',
-    pricing: 'Pricing',
-    help: 'Help',
-    dashboard: 'Dashboard',
-    recruitment: 'Recruitment',
-    employees: 'Employees',
-    settings: 'Settings'
-  },
+  navigation,
   dashboard: {
     menu: {
       logout: 'Logout',
