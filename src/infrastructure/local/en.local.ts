@@ -1,12 +1,11 @@
+import { roles } from './en/en.roles.local'
+
 export const en = {
   hello: 'hello world george speaking',
   app: {
     name: 'HR Platform'
   },
-  roles: {
-    employee: 'Employee',
-    admin: 'Administrator'
-  },
+  roles,
   navigation: {
     services: 'Services',
     pricing: 'Pricing',
@@ -54,7 +53,8 @@ export const en = {
     hero: {
       title: 'Revolutionize your recruitment process with',
       highlight: 'AI',
-      subtitle: 'Automatically analyze CVs, find the best candidates, and make smarter hiring decisions with our AI-powered platform.',
+      subtitle:
+        'Automatically analyze CVs, find the best candidates, and make smarter hiring decisions with our AI-powered platform.',
       cta: 'Get started',
       demo: 'Watch demo'
     },
@@ -63,15 +63,18 @@ export const en = {
       subtitle: 'Discover the tools that will transform your recruitment process',
       ai: {
         title: 'AI Analysis',
-        description: 'Advanced algorithms analyze CVs and compare them with job descriptions to find perfect matches.'
+        description:
+          'Advanced algorithms analyze CVs and compare them with job descriptions to find perfect matches.'
       },
       analysis: {
         title: 'Detailed Analysis',
-        description: 'Get comprehensive reports on each candidate with compatibility scores and recommendations.'
+        description:
+          'Get comprehensive reports on each candidate with compatibility scores and recommendations.'
       },
       time: {
         title: 'Save time',
-        description: 'Reduce screening time by 80% by automating the initial candidate filtering process.'
+        description:
+          'Reduce screening time by 80% by automating the initial candidate filtering process.'
       }
     },
     howItWorks: {
@@ -195,7 +198,7 @@ export const en = {
       adminDescription: 'Full access to all platform features',
       employee: 'Employee',
       employeeDescription: 'Limited access to specific employee functions'
-    },
+    }
   },
   services: {
     main: {
@@ -210,7 +213,8 @@ export const en = {
     cvAnalysis: {
       title: 'CV Analysis',
       subtitle: 'Advanced AI-powered CV analysis',
-      description: 'Our AI analyzes CVs in depth, extracting key information and providing detailed compatibility scores.',
+      description:
+        'Our AI analyzes CVs in depth, extracting key information and providing detailed compatibility scores.',
       features: {
         ai: 'AI-powered analysis',
         compatibility: 'Compatibility scoring',
@@ -225,7 +229,8 @@ export const en = {
     aiImprovement: {
       title: 'AI Job Description Improvement',
       subtitle: 'Optimize your job descriptions',
-      description: 'Improve your job descriptions with AI suggestions to attract better candidates.',
+      description:
+        'Improve your job descriptions with AI suggestions to attract better candidates.',
       features: {
         optimization: 'Content optimization',
         suggestions: 'AI suggestions',
@@ -262,7 +267,8 @@ export const en = {
       subtitle: 'Advanced features to optimize your recruitment process',
       security: {
         title: 'Enterprise Security',
-        description: 'Bank-level security with SSL encryption and GDPR compliance to protect your data.'
+        description:
+          'Bank-level security with SSL encryption and GDPR compliance to protect your data.'
       },
       speed: {
         title: 'Lightning Fast',
@@ -374,23 +380,28 @@ export const en = {
       subtitle: 'Answers to the most common questions about our plans',
       q1: {
         question: 'Can I change plans at any time?',
-        answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes will be applied immediately and billing will be prorated.'
+        answer:
+          'Yes, you can upgrade or downgrade your plan at any time. Changes will be applied immediately and billing will be prorated.'
       },
       q2: {
         question: 'What happens if I exceed my analysis limit?',
-        answer: 'If you exceed your monthly limit, you can purchase additional analyses or upgrade to a higher plan. We\'ll notify you when you\'re approaching the limit.'
+        answer:
+          'If you exceed your monthly limit, you can purchase additional analyses or upgrade to a higher plan. We\'ll notify you when you\'re approaching the limit.'
       },
       q3: {
         question: 'Do you offer discounts for non-profit organizations?',
-        answer: 'Yes, we offer special discounts for non-profit and educational organizations. Contact our sales team for more information.'
+        answer:
+          'Yes, we offer special discounts for non-profit and educational organizations. Contact our sales team for more information.'
       },
       q4: {
         question: 'Can I cancel my subscription at any time?',
-        answer: 'Absolutely. You can cancel your subscription at any time without penalties. You\'ll maintain access until the end of your current billing period.'
+        answer:
+          'Absolutely. You can cancel your subscription at any time without penalties. You\'ll maintain access until the end of your current billing period.'
       },
       q5: {
         question: 'What payment methods do you accept?',
-        answer: 'We accept all major credit cards (Visa, MasterCard, American Express) and bank transfers for Enterprise plans.'
+        answer:
+          'We accept all major credit cards (Visa, MasterCard, American Express) and bank transfers for Enterprise plans.'
       }
     },
     cta: {
@@ -438,7 +449,8 @@ export const en = {
       gettingStarted: {
         q1: {
           question: 'How do I upload my first CV?',
-          answer: 'To upload your first CV, go to the "Analysis" section and click "Upload CV". Select your file and wait for the analysis to complete.'
+          answer:
+            'To upload your first CV, go to the "Analysis" section and click "Upload CV". Select your file and wait for the analysis to complete.'
         },
         q2: {
           question: 'What CV formats are supported?',
@@ -446,65 +458,79 @@ export const en = {
         },
         q3: {
           question: 'How does AI analysis work?',
-          answer: 'Our system uses natural language processing algorithms to extract key information from CVs and compare it with job requirements. The analysis includes skills, experience, education, and overall compatibility.'
+          answer:
+            'Our system uses natural language processing algorithms to extract key information from CVs and compare it with job requirements. The analysis includes skills, experience, education, and overall compatibility.'
         },
         q4: {
           question: 'How long does the analysis take?',
-          answer: 'Analysis typically takes 2-5 minutes depending on the number of CVs. You\'ll receive a notification when the process is complete and can view results immediately.'
+          answer:
+            'Analysis typically takes 2-5 minutes depending on the number of CVs. You\'ll receive a notification when the process is complete and can view results immediately.'
         }
       },
       account: {
         q1: {
           question: 'How do I change my password?',
-          answer: 'Go to Settings > Account and click "Change password". Enter your current password and the new one.'
+          answer:
+            'Go to Settings > Account and click "Change password". Enter your current password and the new one.'
         },
         q2: {
           question: 'Can I change my email address?',
-          answer: 'Yes, you can change your email in the Account Settings section. A verification email will be sent to the new address.'
+          answer:
+            'Yes, you can change your email in the Account Settings section. A verification email will be sent to the new address.'
         },
         q3: {
           question: 'How do I update my company information?',
-          answer: 'Company information can be updated in Settings > Company Profile. You can change the name, address, and other corporate information at any time.'
+          answer:
+            'Company information can be updated in Settings > Company Profile. You can change the name, address, and other corporate information at any time.'
         },
         q4: {
           question: 'How do I delete my account?',
-          answer: 'To delete your account, contact our support team. Please note that this action is irreversible and will delete all your data and saved analyses.'
+          answer:
+            'To delete your account, contact our support team. Please note that this action is irreversible and will delete all your data and saved analyses.'
         }
       },
       billing: {
         q1: {
           question: 'How do I upgrade my plan?',
-          answer: 'Go to Settings > Billing and select the plan you want. Changes will be applied immediately.'
+          answer:
+            'Go to Settings > Billing and select the plan you want. Changes will be applied immediately.'
         },
         q2: {
           question: 'Can I cancel my subscription?',
-          answer: 'Yes, you can cancel your subscription at any time from the Billing section. You will maintain access until the end of the paid period.'
+          answer:
+            'Yes, you can cancel your subscription at any time from the Billing section. You will maintain access until the end of the paid period.'
         },
         q3: {
           question: 'Do you offer discounts for annual payments?',
-          answer: 'Yes, we offer a 20% discount on all plans when you pay annually. The discount is automatically applied when selecting annual billing.'
+          answer:
+            'Yes, we offer a 20% discount on all plans when you pay annually. The discount is automatically applied when selecting annual billing.'
         },
         q4: {
           question: 'What payment methods do you accept?',
-          answer: 'We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for Enterprise accounts.'
+          answer:
+            'We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for Enterprise accounts.'
         }
       },
       technical: {
         q1: {
           question: 'What do I do if the analysis fails?',
-          answer: 'If the analysis fails, verify that the file is not corrupted and has the correct format. If the problem persists, contact support.'
+          answer:
+            'If the analysis fails, verify that the file is not corrupted and has the correct format. If the problem persists, contact support.'
         },
         q2: {
           question: 'Why is my CV not processing?',
-          answer: 'This may be due to an unsupported format, corrupted file, or connectivity issues. Try another file or contact support.'
+          answer:
+            'This may be due to an unsupported format, corrupted file, or connectivity issues. Try another file or contact support.'
         },
         q3: {
           question: 'How do I export results?',
-          answer: 'You can export results in PDF or Excel format from the results page. Click the "Export" button and select your preferred format.'
+          answer:
+            'You can export results in PDF or Excel format from the results page. Click the "Export" button and select your preferred format.'
         },
         q4: {
           question: 'Is my data secure?',
-          answer: 'Yes, we use SSL/TLS encryption for all data transmissions and secure cloud storage. We comply with GDPR regulations and never share your information with third parties.'
+          answer:
+            'Yes, we use SSL/TLS encryption for all data transmissions and secure cloud storage. We comply with GDPR regulations and never share your information with third parties.'
         }
       }
     },
