@@ -9,7 +9,7 @@ import { navigation } from './en/en.navigation.local'
 import { pricing } from './en/en.pricing.local'
 import { recruitment } from './en/en.recruitment.local'
 import { roles } from './en/en.roles.local'
-import { services } from './en/en.services.local'
+import { services } from './en/services/en.services.local'
 
 export const en = {
   hello: 'hello world george speaking',
