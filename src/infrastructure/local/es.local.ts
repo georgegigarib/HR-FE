@@ -1,13 +1,12 @@
 import { common } from './es/es.common.local'
+import { roles } from './es/es.roles.local'
 
 export const es = {
   hello: 'hola mundo te habla george',
   app: {
     name: 'HR Platform'
   },
-  roles: {
-    admin: 'Administrador'
-  },
+  roles,
   navigation: {
     services: 'Servicios',
     pricing: 'Precios',
