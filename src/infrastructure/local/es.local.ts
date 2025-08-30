@@ -4,6 +4,7 @@ import { common } from './es/es.common.local'
 import { navigation } from './es/es.navigation.local'
 import { roles } from './es/es.roles.local'
 import { help } from './es/help/es.help.local'
+import { landing } from './es/landing/es.landing.local'
 
 export const es = {
   hello: 'hola mundo te habla george',
@@ -13,53 +14,7 @@ export const es = {
   roles,
   navigation,
   dashboard,
-  landing: {
-    hero: {
-      title: 'Revoluciona tu proceso de reclutamiento con',
-      highlight: 'IA',
-      subtitle: 'Analiza CVs automáticamente, encuentra los mejores candidatos y toma decisiones de contratación más inteligentes con nuestra plataforma impulsada por inteligencia artificial.',
-      cta: 'Comenzar ahora',
-      demo: 'Ver demo'
-    },
-    features: {
-      title: 'Características principales',
-      subtitle: 'Descubre las herramientas que transformarán tu proceso de reclutamiento',
-      ai: {
-        title: 'Análisis con IA',
-        description: 'Algoritmos avanzados analizan CVs y los comparan con descripciones de trabajo para encontrar coincidencias perfectas.'
-      },
-      analysis: {
-        title: 'Análisis detallado',
-        description: 'Obtén reportes completos sobre cada candidato con puntuaciones de compatibilidad y recomendaciones.'
-      },
-      time: {
-        title: 'Ahorra tiempo',
-        description: 'Reduce el tiempo de selección en un 80% automatizando el proceso inicial de filtrado de candidatos.'
-      }
-    },
-    howItWorks: {
-      title: 'Cómo funciona',
-      step1: {
-        title: 'Sube la descripción del trabajo',
-        description: 'Define los requisitos y habilidades necesarias para el puesto.'
-      },
-      step2: {
-        title: 'Carga los CVs',
-        description: 'Sube múltiples CVs en formato PDF para análisis automático.'
-      },
-      step3: {
-        title: 'Obtén resultados',
-        description: 'Recibe un ranking de candidatos con análisis detallado y recomendaciones.'
-      }
-    },
-    cta: {
-      title: '¿Listo para transformar tu reclutamiento?',
-      subtitle: 'Únete a cientos de empresas que ya están usando nuestra plataforma para encontrar el talento perfecto.',
-      button: 'Comenzar ahora',
-      register: 'Crear cuenta gratuita',
-      login: 'Iniciar sesión'
-    }
-  },
+  landing,
   auth: {
     or: 'o',
     login: {
