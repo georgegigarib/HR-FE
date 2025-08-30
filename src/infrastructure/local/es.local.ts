@@ -1,4 +1,5 @@
 import { common } from './es/es.common.local'
+import { navigation } from './es/es.navigation.local'
 import { roles } from './es/es.roles.local'
 
 export const es = {
@@ -7,15 +8,7 @@ export const es = {
     name: 'HR Platform'
   },
   roles,
-  navigation: {
-    services: 'Servicios',
-    pricing: 'Precios',
-    help: 'Ayuda',
-    dashboard: 'Panel de Control',
-    recruitment: 'Reclutamiento',
-    employees: 'Empleados',
-    settings: 'Configuración'
-  },
+  navigation,
   dashboard: {
     menu: {
       logout: 'Cerrar sesión',
