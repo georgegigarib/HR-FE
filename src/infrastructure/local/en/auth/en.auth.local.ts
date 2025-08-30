@@ -1,4 +1,4 @@
-import { roles } from '../en.roles.local'
+import { roles } from './en.auth.roles.local'
 import { fields } from './en.auth.fields.local'
 import { forgotPassword } from './en.auth.forgot.local'
 import { login } from './en.auth.login.local'

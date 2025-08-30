@@ -1,4 +1,5 @@
 import { account } from './es/account/es.account.local'
+import { auth } from './es/auth/es.auth.local'
 import { dashboard } from './es/dashboard/es.dashboard.local'
 import { common } from './es/es.common.local'
 import { navigation } from './es/es.navigation.local'
@@ -15,91 +16,7 @@ export const es = {
   navigation,
   dashboard,
   landing,
-  auth: {
-    or: 'o',
-    login: {
-      title: 'Iniciar sesión',
-      subtitle: 'Accede a tu cuenta para continuar',
-      rememberMe: 'Recordarme',
-      forgotPassword: '¿Olvidaste tu contraseña?',
-      submit: 'Iniciar sesión',
-      loggingIn: 'Iniciando sesión...',
-      noAccount: '¿No tienes una cuenta?',
-      signUp: 'Regístrate',
-      success: 'Sesión iniciada correctamente',
-      error: 'Error al iniciar sesión'
-    },
-    register: {
-      title: 'Crear cuenta',
-      subtitle: 'Únete a nuestra plataforma',
-      step1Title: 'Información de la empresa',
-      step2Title: 'Información personal',
-      submit: 'Crear cuenta',
-      creating: 'Creando cuenta...',
-      hasAccount: '¿Ya tienes una cuenta?',
-      signIn: 'Inicia sesión',
-      success: 'Cuenta creada correctamente',
-      error: 'Error al crear la cuenta',
-      nextStep: 'Siguiente',
-      previousStep: 'Anterior',
-      back: 'Atrás',
-      acceptTerms: 'Acepto los',
-      and: 'y',
-      termsLink: 'Términos de Servicio',
-      privacyLink: 'Política de Privacidad',
-      createAccount: 'Crear Cuenta'
-    },
-    forgotPassword: {
-      title: 'Olvidé mi contraseña',
-      subtitle: 'Ingresa tu email para restablecer tu contraseña',
-      sending: 'Enviando...',
-      submit: 'Enviar enlace de restablecimiento',
-      emailSent: '¡Email enviado!',
-      checkEmail: 'Enviamos un enlace de restablecimiento a {email}',
-      sendAnother: 'Enviar otro email',
-      backToLogin: 'Volver al login',
-      success: 'Email de restablecimiento enviado exitosamente',
-      error: 'Error al enviar email de restablecimiento'
-    },
-    fields: {
-      email: 'Correo electrónico',
-      password: 'Contraseña',
-      confirmPassword: 'Confirmar contraseña',
-      firstName: 'Nombre',
-      lastName: 'Apellido',
-      companyId: 'ID de empresa',
-      companyName: 'Nombre de empresa',
-      role: 'Rol'
-    },
-    placeholders: {
-      email: 'tu@email.com',
-      password: 'Tu contraseña',
-      confirmPassword: 'Confirma tu contraseña',
-      firstName: 'Tu nombre',
-      lastName: 'Tu apellido',
-      companyId: 'ID único de empresa',
-      companyName: 'Nombre de tu empresa'
-    },
-    validation: {
-      emailRequired: 'El correo electrónico es obligatorio',
-      emailInvalid: 'El correo electrónico no es válido',
-      passwordRequired: 'La contraseña es obligatoria',
-      passwordMinLength: 'La contraseña debe tener al menos 6 caracteres',
-      confirmPasswordRequired: 'Confirmar contraseña es obligatorio',
-      passwordsNotMatch: 'Las contraseñas no coinciden',
-      firstNameRequired: 'El nombre es obligatorio',
-      lastNameRequired: 'El apellido es obligatorio',
-      companyIdRequired: 'El ID de empresa es obligatorio',
-      companyNameRequired: 'El nombre de empresa es obligatorio'
-    },
-    roles: {
-      admin: 'Administrador',
-      adminDescription: 'Acceso completo a todas las funciones de la plataforma',
-      employee: 'Empleado',
-      employeeDescription: 'Acceso limitado a funciones específicas del empleado'
-    },
-    logout: 'Cerrar sesión'
-  },
+  auth,
   services: {
     main: {
       title: 'Nuestros Servicios',
