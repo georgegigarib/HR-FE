@@ -1,3 +1,5 @@
+import { common } from './es/es.common.local'
+
 export const es = {
   hello: 'hola mundo te habla george',
   app: {
@@ -727,11 +729,5 @@ export const es = {
       avatarChangeComingSoon: 'Cambio de avatar próximamente disponible'
     }
   },
-  common: {
-    confirm: 'Confirmar',
-    delete: 'Eliminar',
-    cancel: 'Cancelar',
-    back: 'Volver',
-    ok: 'Aceptar'
-  }
+  common
 }
