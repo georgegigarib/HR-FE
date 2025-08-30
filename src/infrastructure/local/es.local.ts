@@ -1,5 +1,6 @@
 import { account } from './es/account/es.account.local'
 import { common } from './es/es.common.local'
+import { dashboard } from './es/dashboard/es.dashboard.local'
 import { navigation } from './es/es.navigation.local'
 import { roles } from './es/es.roles.local'
 
@@ -10,40 +11,7 @@ export const es = {
   },
   roles,
   navigation,
-  dashboard: {
-    menu: {
-      logout: 'Cerrar sesión',
-      profile: 'Perfil',
-      settings: 'Configuración'
-    },
-    admin: {
-      title: 'Panel de Administrador',
-      stats: {
-        totalEmployees: 'Total de Empleados',
-        processedCvs: 'CVs Procesados',
-        remainingCvs: 'CVs Restantes',
-        currentPlan: 'Plan Actual'
-      },
-      quickActions: {
-        recruitment: 'Reclutamiento',
-        recruitmentDesc: 'Iniciar un nuevo proceso de reclutamiento',
-        startRecruitment: 'Iniciar Reclutamiento',
-        employees: 'Empleados',
-        employeesDesc: 'Gestionar empleados y perfiles',
-        manageEmployees: 'Gestionar Empleados'
-      },
-      recentActivity: {
-        title: 'Actividad Reciente',
-        empty: 'No hay actividad reciente',
-        emptyDesc: 'La actividad aparecerá aquí cuando comiences a usar la plataforma'
-      }
-    },
-    time: {
-      daysAgo: 'hace {count} días',
-      hoursAgo: 'hace {count} horas',
-      justNow: 'ahora mismo'
-    }
-  },
+  dashboard,
   landing: {
     hero: {
       title: 'Revoluciona tu proceso de reclutamiento con',
