@@ -1,3 +1,4 @@
+import { account } from './es/account/es.account.local'
 import { common } from './es/es.common.local'
 import { navigation } from './es/es.navigation.local'
 import { roles } from './es/es.roles.local'
@@ -671,55 +672,6 @@ export const es = {
       inactive: 'Inactivo'
     }
   },
-  account: {
-    title: 'Configuración de Cuenta',
-    tabs: {
-      profile: 'Perfil',
-      security: 'Seguridad',
-      notifications: 'Notificaciones'
-    },
-    profile: {
-      title: 'Información del Perfil',
-      avatarHint: 'Haz clic para cambiar tu foto de perfil',
-      fullName: 'Nombre completo',
-      email: 'Correo electrónico',
-      phone: 'Teléfono',
-      position: 'Posición',
-      companyInfo: 'Información de la empresa',
-      companyName: 'Nombre de la empresa',
-      role: 'Rol',
-      changeAvatar: 'Cambiar avatar',
-      save: 'Guardar'
-    },
-    security: {
-      changePassword: 'Cambiar contraseña',
-      currentPassword: 'Contraseña actual',
-      newPassword: 'Nueva contraseña',
-      passwordHint: 'Debe tener al menos 8 caracteres',
-      confirmPassword: 'Confirmar contraseña',
-      updatePassword: 'Actualizar contraseña',
-      activeSessions: 'Sesiones activas',
-      lastActive: 'Última actividad',
-      currentSession: 'Sesión actual',
-      terminate: 'Terminar'
-    },
-    notifications: {
-      title: 'Notificaciones',
-      email: 'Notificaciones por correo',
-      processComplete: 'Proceso completado',
-      processCompleteDesc: 'Recibir notificación cuando se complete el análisis de CVs',
-      weeklyReport: 'Reporte semanal',
-      weeklyReportDesc: 'Recibir un resumen semanal de actividad y estadísticas',
-      accountUpdates: 'Actualizaciones de cuenta',
-      accountUpdatesDesc: 'Recibir notificaciones sobre cambios en tu cuenta',
-      browser: 'Navegador',
-      browserNotifications: 'Notificaciones del navegador',
-      browserNotificationsDesc: 'Mostrar notificaciones en tiempo real en tu navegador',
-      save: 'Guardar configuración'
-    },
-    messages: {
-      avatarChangeComingSoon: 'Cambio de avatar próximamente disponible'
-    }
-  },
+  account,
   common
 }
