@@ -9,7 +9,8 @@ export const contact = {
   chat: {
     title: 'Live Chat',
     description: 'Chat with our support team',
-    action: 'Start Chat'
+    action: 'Start Chat',
+    comingSoon: 'Live Chat coming soon'
   },
   phone: {
     title: 'Phone',

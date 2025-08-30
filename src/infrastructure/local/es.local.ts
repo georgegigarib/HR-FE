@@ -1,8 +1,9 @@
 import { account } from './es/account/es.account.local'
-import { common } from './es/es.common.local'
 import { dashboard } from './es/dashboard/es.dashboard.local'
+import { common } from './es/es.common.local'
 import { navigation } from './es/es.navigation.local'
 import { roles } from './es/es.roles.local'
+import { help } from './es/help/es.help.local'
 
 export const es = {
   hello: 'hola mundo te habla george',
@@ -350,127 +351,7 @@ export const es = {
       planSelected: 'Plan seleccionado exitosamente'
     }
   },
-  help: {
-    hero: {
-      title: 'Centro de Ayuda',
-      subtitle: 'Encuentra respuestas a tus preguntas y aprende a sacar el máximo provecho de nuestra plataforma de análisis de CVs.'
-    },
-    search: {
-      placeholder: 'Buscar en las preguntas frecuentes...'
-    },
-    quickLinks: {
-      gettingStarted: 'Primeros pasos',
-      gettingStartedDesc: 'Aprende los conceptos básicos para comenzar',
-      account: 'Gestión de cuenta',
-      accountDesc: 'Administra tu perfil y configuración',
-      billing: 'Facturación y planes',
-      billingDesc: 'Información sobre precios y pagos',
-      technical: 'Soporte técnico',
-      technicalDesc: 'Soluciona problemas técnicos'
-    },
-    categories: {
-      gettingStarted: 'Primeros pasos',
-      account: 'Gestión de cuenta',
-      billing: 'Facturación y planes',
-      technical: 'Soporte técnico'
-    },
-    faq: {
-      title: 'Preguntas frecuentes',
-      subtitle: 'Encuentra respuestas rápidas a las preguntas más comunes',
-      gettingStarted: {
-        q1: {
-          question: '¿Cómo empiezo a usar la plataforma?',
-          answer: 'Para comenzar, simplemente regístrate con tu correo electrónico, completa la información de tu empresa y podrás acceder inmediatamente a todas las funcionalidades. Te recomendamos comenzar con nuestro tutorial interactivo.'
-        },
-        q2: {
-          question: '¿Qué formatos de CV acepta la plataforma?',
-          answer: 'Actualmente aceptamos archivos en formato PDF. Puedes subir hasta 30 CVs simultáneamente para análisis. Los archivos deben tener un tamaño máximo de 10MB cada uno.'
-        },
-        q3: {
-          question: '¿Cómo funciona el análisis con IA?',
-          answer: 'Nuestro sistema utiliza algoritmos de procesamiento de lenguaje natural para extraer información clave de los CVs y compararla con los requisitos del puesto. El análisis incluye habilidades, experiencia, educación y compatibilidad general.'
-        },
-        q4: {
-          question: '¿Cuánto tiempo tarda el análisis?',
-          answer: 'El análisis típicamente toma entre 2-5 minutos dependiendo del número de CVs. Recibirás una notificación cuando el proceso esté completo y podrás ver los resultados inmediatamente.'
-        }
-      },
-      account: {
-        q1: {
-          question: '¿Cómo cambio mi contraseña?',
-          answer: 'Ve a Configuración de cuenta > Seguridad > Cambiar contraseña. Ingresa tu contraseña actual y la nueva contraseña dos veces. La nueva contraseña debe tener al menos 8 caracteres.'
-        },
-        q2: {
-          question: '¿Puedo agregar más usuarios a mi cuenta?',
-          answer: 'Sí, puedes invitar a miembros de tu equipo desde la sección "Gestión de equipo" en tu dashboard. Cada usuario tendrá su propio acceso y podrás asignar diferentes niveles de permisos.'
-        },
-        q3: {
-          question: '¿Cómo actualizo la información de mi empresa?',
-          answer: 'La información de la empresa se puede actualizar en Configuración > Perfil de empresa. Puedes cambiar el nombre, dirección, y otra información corporativa en cualquier momento.'
-        },
-        q4: {
-          question: '¿Cómo elimino mi cuenta?',
-          answer: 'Para eliminar tu cuenta, contacta a nuestro equipo de soporte. Ten en cuenta que esta acción es irreversible y se eliminarán todos tus datos y análisis guardados.'
-        }
-      },
-      billing: {
-        q1: {
-          question: '¿Qué planes están disponibles?',
-          answer: 'Ofrecemos tres planes: Básico (hasta 50 análisis/mes), Profesional (hasta 200 análisis/mes) y Enterprise (análisis ilimitados). Todos incluyen soporte técnico y actualizaciones gratuitas.'
-        },
-        q2: {
-          question: '¿Puedo cambiar mi plan en cualquier momento?',
-          answer: 'Sí, puedes actualizar o degradar tu plan en cualquier momento desde la sección de Facturación. Los cambios se aplicarán en tu próximo ciclo de facturación.'
-        },
-        q3: {
-          question: '¿Ofrecen descuentos por pago anual?',
-          answer: 'Sí, ofrecemos un 20% de descuento en todos los planes cuando pagas anualmente. El descuento se aplica automáticamente al seleccionar la facturación anual.'
-        },
-        q4: {
-          question: '¿Qué métodos de pago aceptan?',
-          answer: 'Aceptamos todas las tarjetas de crédito principales (Visa, MasterCard, American Express), PayPal y transferencias bancarias para cuentas Enterprise.'
-        }
-      },
-      technical: {
-        q1: {
-          question: '¿Qué hago si el análisis falla?',
-          answer: 'Si un análisis falla, verifica que los archivos PDF no estén dañados y tengan texto seleccionable. Si el problema persiste, contacta a soporte técnico con los detalles del error.'
-        },
-        q2: {
-          question: '¿La plataforma funciona en dispositivos móviles?',
-          answer: 'Sí, nuestra plataforma es completamente responsive y funciona en tablets y smartphones. Sin embargo, recomendamos usar una computadora para una mejor experiencia al subir múltiples archivos.'
-        },
-        q3: {
-          question: '¿Cómo exporto los resultados?',
-          answer: 'Puedes exportar los resultados en formato PDF o Excel desde la página de resultados. Haz clic en el botón "Exportar" y selecciona tu formato preferido.'
-        },
-        q4: {
-          question: '¿Los datos están seguros?',
-          answer: 'Sí, utilizamos encriptación SSL/TLS para todas las transmisiones de datos y almacenamiento seguro en la nube. Cumplimos con las regulaciones GDPR y nunca compartimos tu información con terceros.'
-        }
-      }
-    },
-    contact: {
-      title: '¿Necesitas más ayuda?',
-      subtitle: 'Nuestro equipo de soporte está aquí para ayudarte',
-      email: {
-        title: 'Soporte por email',
-        description: 'Envíanos un mensaje y te responderemos en menos de 24 horas',
-        action: 'Enviar email'
-      },
-      chat: {
-        title: 'Chat en vivo',
-        description: 'Chatea con nuestro equipo de soporte en tiempo real',
-        action: 'Iniciar chat',
-        comingSoon: 'El chat en vivo estará disponible próximamente'
-      },
-      phone: {
-        title: 'Soporte telefónico',
-        description: 'Llámanos de lunes a viernes de 9:00 AM a 6:00 PM',
-        action: 'Llamar ahora'
-      }
-    }
-  },
+  help,
   recruitment: {
     step1: {
       title: 'Descripción del Puesto',
