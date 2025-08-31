@@ -6,6 +6,7 @@ import { navigation } from './es/es.navigation.local'
 import { roles } from './es/es.roles.local'
 import { help } from './es/help/es.help.local'
 import { landing } from './es/landing/es.landing.local'
+import { services } from './es/services/es.services.local'
 
 export const es = {
   hello: 'hola mundo te habla george',
@@ -17,93 +18,7 @@ export const es = {
   dashboard,
   landing,
   auth,
-  services: {
-    main: {
-      title: 'Nuestros Servicios',
-      subtitle: 'Soluciones integrales de análisis de CVs y reclutamiento'
-    },
-    hero: {
-      title: 'Nuestros Servicios',
-      subtitle: 'Soluciones integrales de análisis de CVs y reclutamiento',
-      cta: 'Comenzar'
-    },
-    cvAnalysis: {
-      title: 'Análisis de CVs',
-      subtitle: 'Análisis avanzado de CVs con IA',
-      description: 'Nuestra IA analiza CVs en profundidad, extrayendo información clave y proporcionando puntuaciones detalladas de compatibilidad.',
-      features: {
-        ai: 'Análisis con IA',
-        compatibility: 'Puntuación de compatibilidad',
-        extraction: 'Extracción de datos',
-        reports: 'Reportes detallados',
-        parsing: 'Análisis de contenido',
-        matching: 'Coincidencia de perfiles',
-        scoring: 'Puntuación automática',
-        insights: 'Insights inteligentes'
-      }
-    },
-    aiImprovement: {
-      title: 'Mejora de Descripciones de Trabajo con IA',
-      subtitle: 'Optimiza tus descripciones de trabajo',
-      description: 'Mejora tus descripciones de trabajo con sugerencias de IA para atraer mejores candidatos.',
-      features: {
-        optimization: 'Optimización de contenido',
-        suggestions: 'Sugerencias de IA',
-        templates: 'Plantillas profesionales',
-        analytics: 'Análisis de rendimiento',
-        keywords: 'Optimización de palabras clave',
-        clarity: 'Mejora de claridad'
-      },
-      demo: {
-        title: 'Demostración de Mejora con IA',
-        before: 'Antes',
-        after: 'Después'
-      }
-    },
-    candidateManagement: {
-      title: 'Gestión de Candidatos',
-      subtitle: 'Sistema completo de gestión de candidatos',
-      description: 'Gestiona tus candidatos de manera eficiente con nuestras herramientas integrales.',
-      features: {
-        ranking: 'Clasificación de candidatos',
-        tracking: 'Seguimiento de aplicaciones',
-        communication: 'Herramientas de comunicación',
-        collaboration: 'Colaboración en equipo',
-        reports: 'Reportes detallados',
-        export: 'Exportación de datos'
-      },
-      demo: {
-        title: 'Gestión Avanzada de Candidatos',
-        export: 'Exportar Resultados'
-      }
-    },
-    additional: {
-      title: 'Características Adicionales',
-      subtitle: 'Funcionalidades avanzadas para optimizar tu proceso de reclutamiento',
-      security: {
-        title: 'Seguridad Empresarial',
-        description: 'Seguridad de nivel bancario con encriptación SSL y cumplimiento GDPR para proteger tus datos.'
-      },
-      speed: {
-        title: 'Velocidad Ultrarrápida',
-        description: 'Procesa cientos de CVs en minutos con nuestros algoritmos de IA optimizados.'
-      },
-      integration: {
-        title: 'Integración Fácil',
-        description: 'Integra sin problemas con tus herramientas de RRHH existentes y flujos de trabajo a través de nuestra API.'
-      },
-      support: {
-        title: 'Soporte 24/7',
-        description: 'Obtén ayuda cuando la necesites con nuestro equipo de soporte dedicado.'
-      }
-    },
-    cta: {
-      title: '¿Listo para Transformar tu Reclutamiento?',
-      subtitle: 'Únete a cientos de empresas que ya usan nuestra plataforma para encontrar el talento perfecto.',
-      primary: 'Comenzar Prueba Gratuita',
-      secondary: 'Programar Demo'
-    }
-  },
+  services,
   pricing: {
     hero: {
       title: 'Planes y Precios',
