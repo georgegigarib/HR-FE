@@ -6,6 +6,7 @@ import { navigation } from './es/es.navigation.local'
 import { roles } from './es/es.roles.local'
 import { help } from './es/help/es.help.local'
 import { landing } from './es/landing/es.landing.local'
+import { pricing } from './es/pricing/es.pricing.local'
 import { services } from './es/services/es.services.local'
 
 export const es = {
@@ -19,125 +20,7 @@ export const es = {
   landing,
   auth,
   services,
-  pricing: {
-    hero: {
-      title: 'Planes y Precios',
-      subtitle: 'Elige el plan perfecto para tus necesidades de análisis de CVs'
-    },
-    billing: {
-      monthly: 'Mensual',
-      annual: 'Anual',
-      save20: 'Ahorra 20%'
-    },
-    plans: {
-      trial: {
-        name: 'Prueba Gratuita',
-        period: '7 días gratis',
-        description: 'Perfecto para probar nuestra plataforma',
-        cta: 'Comenzar Prueba Gratuita',
-        features: {
-          cvs: '5 análisis de CV',
-          users: '1 usuario',
-          ai: 'Análisis básico con IA',
-          support: 'Soporte por email'
-        }
-      },
-      starter: {
-        name: 'Starter',
-        period: '/mes',
-        description: 'Ideal para pequeñas empresas y reclutadores independientes',
-        cta: 'Comenzar con Starter',
-        features: {
-          cvs: '50 análisis de CV por mes',
-          users: '3 usuarios',
-          ai: 'Análisis avanzado con IA',
-          export: 'Exportar contactos',
-          support: 'Soporte por email'
-        }
-      },
-      professional: {
-        badge: 'Más Popular',
-        name: 'Professional',
-        period: '/mes',
-        description: 'Para equipos de RRHH que necesitan análisis avanzados',
-        cta: 'Comenzar con Professional',
-        features: {
-          cvs: '200 análisis de CV por mes',
-          users: '10 usuarios',
-          ai: 'Análisis completo con IA',
-          export: 'Exportar contactos ilimitado',
-          analytics: 'Analytics y métricas avanzadas',
-          support: 'Soporte prioritario'
-        }
-      },
-      enterprise: {
-        name: 'Enterprise',
-        period: '/mes',
-        description: 'Solución completa para grandes organizaciones',
-        cta: 'Contactar Ventas',
-        features: {
-          cvs: 'Análisis ilimitados',
-          users: 'Usuarios ilimitados',
-          ai: 'IA personalizada y avanzada',
-          export: 'Exportar contactos ilimitado',
-          analytics: 'Analytics empresariales',
-          api: 'Acceso completo a API',
-          support: 'Soporte dedicado 24/7'
-        }
-      }
-    },
-    comparison: {
-      title: 'Compara Nuestros Planes',
-      subtitle: 'Encuentra el plan que mejor se adapte a tus necesidades',
-      features: 'Características',
-      table: {
-        cvAnalysis: 'Análisis de CV',
-        users: 'Usuarios',
-        aiImprovement: 'Mejoras con IA',
-        exportContacts: 'Exportar Contactos',
-        analytics: 'Analytics',
-        apiAccess: 'Acceso a API',
-        support: 'Soporte',
-        unlimited: 'Ilimitado',
-        emailSupport: 'Soporte por Email',
-        prioritySupport: 'Soporte Prioritario',
-        dedicatedSupport: 'Soporte Dedicado'
-      }
-    },
-    faq: {
-      title: 'Preguntas Frecuentes',
-      subtitle: 'Respuestas a las preguntas más comunes sobre nuestros planes',
-      q1: {
-        question: '¿Puedo cambiar de plan en cualquier momento?',
-        answer: 'Sí, puedes actualizar o degradar tu plan en cualquier momento. Los cambios se aplicarán inmediatamente y se prorrateará la facturación.'
-      },
-      q2: {
-        question: '¿Qué sucede si excedo mi límite de análisis?',
-        answer: 'Si excedes tu límite mensual, puedes comprar análisis adicionales o actualizar a un plan superior. Te notificaremos cuando te acerques al límite.'
-      },
-      q3: {
-        question: '¿Ofrecen descuentos para organizaciones sin fines de lucro?',
-        answer: 'Sí, ofrecemos descuentos especiales para organizaciones sin fines de lucro y educativas. Contacta a nuestro equipo de ventas para más información.'
-      },
-      q4: {
-        question: '¿Puedo cancelar mi suscripción en cualquier momento?',
-        answer: 'Absolutamente. Puedes cancelar tu suscripción en cualquier momento sin penalizaciones. Mantendrás acceso hasta el final de tu período de facturación actual.'
-      },
-      q5: {
-        question: '¿Qué métodos de pago aceptan?',
-        answer: 'Aceptamos todas las principales tarjetas de crédito (Visa, MasterCard, American Express) y transferencias bancarias para planes Enterprise.'
-      }
-    },
-    cta: {
-      title: '¿Listo para comenzar?',
-      subtitle: 'Únete a miles de empresas que ya confían en nuestra plataforma',
-      startTrial: 'Comenzar Prueba Gratuita',
-      contactSales: 'Contactar Ventas'
-    },
-    messages: {
-      planSelected: 'Plan seleccionado exitosamente'
-    }
-  },
+  pricing,
   help,
   recruitment: {
     step1: {
