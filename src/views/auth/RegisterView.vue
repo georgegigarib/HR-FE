@@ -61,7 +61,7 @@
               :error="errors.fullName"
               required
               autocomplete="name"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
@@ -75,7 +75,7 @@
               :error="errors.firstName"
               required
               autocomplete="given-name"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
@@ -89,7 +89,7 @@
               :error="errors.lastName"
               required
               autocomplete="family-name"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
@@ -102,7 +102,7 @@
               :error="errors.email"
               required
               autocomplete="email"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
@@ -117,7 +117,7 @@
               :hint="$t('auth.hints.password')"
               required
               autocomplete="new-password"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
@@ -131,7 +131,7 @@
               :error="errors.confirmPassword"
               required
               autocomplete="new-password"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
@@ -196,7 +196,7 @@
               :error="errors.companyName"
               required
               autocomplete="organization"
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 
@@ -210,7 +210,7 @@
               :error="errors.companyId"
               :hint="$t('auth.hints.companyId')"
               required
-              class="focus-within:ring-2 focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
+              class="text-black focus-within:ring-blue-500/20 rounded-xl transition-all duration-300"
             />
           </div>
 

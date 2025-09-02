@@ -167,10 +167,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { toast } from 'vue3-toastify';
 import {
   DocumentTextIcon,
   ChartBarIcon,
@@ -183,7 +181,6 @@ import BaseButton from '@/components/ui/BaseButton.vue';
 import BaseBadge from '@/components/ui/BaseBadge.vue';
 
 const { t } = useI18n();
-const router = useRouter();
 const authStore = useAuthStore();
 
 // Removed showUserMenu as it's now handled by DashboardLayout

@@ -102,7 +102,7 @@ const handleKeydown = (event: KeyboardEvent) => {
   emit('keydown', event);
 };
 
-const baseClasses = 'block w-full rounded-lg border transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-0';
+const baseClasses = 'block w-full rounded-lg border transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-0 text-black';
 
 const sizeClasses = computed(() => {
   switch (props.size) {
