@@ -9,7 +9,7 @@ import Register from '@/views/auth/RegisterView.vue';
 import ForgotPassword from '@/views/auth/ForgotPasswordView.vue';
 import ResetPassword from '@/views/auth/ResetPasswordView.vue';
 import Services from '@/views/public/ServicesView.vue';
-import Help from '@/views/public/HelpView.vue';
+import Help from '@/presentation/help/views/HelpView.vue';
 import Pricing from '@/views/public/PricingView.vue';
 import DashboardLayout from '@/components/layouts/DashboardLayout.vue';
 import AdminDashboard from '@/views/dashboard/AdminDashboardView.vue';
