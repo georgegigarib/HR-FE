@@ -1,0 +1,37 @@
+{
+  "folders": [
+    {
+      "path": "./"
+    }
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "terminals.terminals": [
+      {
+        "name": "Dev",
+        "commands": ["bun run dev"],
+        "execute": true,
+        "icon": "play",
+        "color": "terminal.ansiGreen",
+        "recycle": false
+      },
+      {
+        "name": "Test",
+        "icon": "beaker",
+        "color": "terminal.ansiYellow",
+        "recycle": false
+      },
+      {
+        "name": "Git",
+        "color": "terminal.ansiRed",
+        "icon": "git-branch",
+        "recycle": false
+      }
+    ]
+  }
+}

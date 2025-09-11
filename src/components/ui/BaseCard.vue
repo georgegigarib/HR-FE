@@ -1,5 +1,5 @@
 <template>
-  <div :class="cardClasses">
+  <div :class="cardClasses" @click="handleClick">
     <div v-if="$slots.header || title" :class="headerClasses">
       <div v-if="title" class="flex items-center justify-between">
         <h3 :class="titleClasses">{{ title }}</h3>
@@ -45,6 +45,10 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<{
   click: [event: MouseEvent];
 }>();
+
+const handleClick = (event: MouseEvent) => {
+  emit('click', event);
+};
 
 const baseClasses = 'bg-white border transition-all duration-200';
 

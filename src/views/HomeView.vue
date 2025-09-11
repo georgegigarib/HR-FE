@@ -12,18 +12,10 @@
             {{ $t('landing.hero.subtitle') }}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <BaseButton
-              variant="primary"
-              size="lg"
-              @click="router.push('/register')"
-            >
+            <BaseButton variant="primary" size="lg" @click="router.push('/register')">
               {{ $t('landing.hero.cta') }}
             </BaseButton>
-            <BaseButton
-              variant="outline"
-              size="lg"
-              @click="router.push('/login')"
-            >
+            <BaseButton variant="outline" size="lg" @click="router.push('/login')">
               {{ $t('landing.hero.demo') }}
             </BaseButton>
           </div>
@@ -42,10 +34,12 @@
             {{ $t('landing.features.subtitle') }}
           </p>
         </div>
-        
+
         <div class="grid md:grid-cols-3 gap-8">
           <div class="text-center p-6">
-            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
               <DocumentTextIcon class="w-8 h-8 text-blue-600" />
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
@@ -55,9 +49,11 @@
               {{ $t('landing.features.ai.description') }}
             </p>
           </div>
-          
+
           <div class="text-center p-6">
-            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
               <ChartBarIcon class="w-8 h-8 text-green-600" />
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
@@ -67,9 +63,11 @@
               {{ $t('landing.features.analysis.description') }}
             </p>
           </div>
-          
+
           <div class="text-center p-6">
-            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
               <ClockIcon class="w-8 h-8 text-purple-600" />
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
@@ -91,10 +89,12 @@
             {{ $t('landing.howItWorks.title') }}
           </h2>
         </div>
-        
+
         <div class="grid md:grid-cols-3 gap-8">
           <div class="text-center">
-            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            <div
+              class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold"
+            >
               1
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
@@ -104,9 +104,11 @@
               {{ $t('landing.howItWorks.step1.description') }}
             </p>
           </div>
-          
+
           <div class="text-center">
-            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            <div
+              class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold"
+            >
               2
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
@@ -116,9 +118,11 @@
               {{ $t('landing.howItWorks.step2.description') }}
             </p>
           </div>
-          
+
           <div class="text-center">
-            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+            <div
+              class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold"
+            >
               3
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">
@@ -141,11 +145,7 @@
         <p class="text-xl text-blue-100 mb-8">
           {{ $t('landing.cta.subtitle') }}
         </p>
-        <BaseButton
-          variant="secondary"
-          size="lg"
-          @click="$router.push('/register')"
-        >
+        <BaseButton variant="secondary" size="lg" @click="$router.push('/register')">
           {{ $t('landing.cta.button') }}
         </BaseButton>
       </div>
@@ -156,7 +156,7 @@
 <script setup lang="ts">
 import { DocumentTextIcon, ChartBarIcon, ClockIcon } from '@heroicons/vue/24/outline'
 import BaseButton from '@/components/ui/BaseButton.vue'
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 </script>
