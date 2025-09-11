@@ -327,24 +327,7 @@
             </BaseButton>
           </BaseCard>
 
-          <!-- Live Chat -->
-          <BaseCard class="text-center p-8">
-            <div
-              class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
-            >
-              <ChatBubbleLeftRightIcon class="w-8 h-8 text-green-600" />
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              {{ $t('help.contact.chat.title') }}
-            </h3>
-            <p class="text-gray-600 mb-6">
-              {{ $t('help.contact.chat.description') }}
-            </p>
-            <BaseButton variant="primary" @click="startChat">
-              {{ $t('help.contact.chat.action') }}
-            </BaseButton>
-          </BaseCard>
-
+          <LiveChat />
           <PhoneSupport />
         </div>
       </div>
@@ -356,7 +339,6 @@
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseCard from '@/components/ui/BaseCard.vue'
 import {
-  ChatBubbleLeftRightIcon,
   ChevronDownIcon,
   Cog6ToothIcon,
   CreditCardIcon,
@@ -367,6 +349,7 @@ import {
 } from '@heroicons/vue/24/outline'
 import { computed, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import LiveChat from '../components/LiveChat.vue'
 import PhoneSupport from '../components/PhoneSupport.vue'
 
 const { t } = useI18n()
@@ -512,10 +495,5 @@ const filterFAQs = () => {
 
 const sendEmail = () => {
   window.location.href = 'mailto:support@cvanalyzer.com'
-}
-
-const startChat = () => {
-  // Simulate starting a chat
-  alert(t('help.contact.chat.comingSoon'))
 }
 </script>
