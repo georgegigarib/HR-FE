@@ -5,5 +5,6 @@ export const navigation = {
   dashboard: 'Panel de Control',
   recruitment: 'Reclutamiento',
   employees: 'Empleados',
-  settings: 'Configuración'
+  settings: 'Configuración',
+  changeLanguage: 'Cambiar Idioma'
 }

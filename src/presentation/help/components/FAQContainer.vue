@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20">
+  <section class="py-20 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -61,12 +61,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import {
-  Cog6ToothIcon,
-  CreditCardIcon,
-  PlayIcon,
-  UserIcon
-} from '@heroicons/vue/24/outline'
+import { Cog6ToothIcon, CreditCardIcon, PlayIcon, UserIcon } from '@heroicons/vue/24/outline'
 import FAQSection from './FAQSection.vue'
 import { useFAQSections, type FAQSections } from '../data/faqSections'
 
