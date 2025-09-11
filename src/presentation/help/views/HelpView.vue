@@ -4,15 +4,7 @@
     <nav class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <router-link to="/" class="flex items-center space-x-2">
-              <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span class="text-white font-bold text-sm">HR</span>
-              </div>
-              <span class="text-xl font-bold text-gray-900">CVAnalyzer</span>
-            </router-link>
-          </div>
+          <CompanyLogo />
 
           <!-- Navigation Links -->
           <div class="hidden md:flex items-center space-x-8">
@@ -303,6 +295,7 @@
 <script setup lang="ts">
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseCard from '@/components/ui/BaseCard.vue'
+import CompanyLogo from '@/presentation/shared/CompanyLogo.vue'
 import {
   ChevronDownIcon,
   Cog6ToothIcon,
