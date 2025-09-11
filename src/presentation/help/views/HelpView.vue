@@ -309,24 +309,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Email Support -->
-          <BaseCard class="text-center p-8">
-            <div
-              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6"
-            >
-              <EnvelopeIcon class="w-8 h-8 text-blue-600" />
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">
-              {{ $t('help.contact.email.title') }}
-            </h3>
-            <p class="text-gray-600 mb-6">
-              {{ $t('help.contact.email.description') }}
-            </p>
-            <BaseButton variant="outline" @click="sendEmail">
-              {{ $t('help.contact.email.action') }}
-            </BaseButton>
-          </BaseCard>
-
+          <EmailSupport />
           <LiveChat />
           <PhoneSupport />
         </div>
@@ -342,13 +325,13 @@ import {
   ChevronDownIcon,
   Cog6ToothIcon,
   CreditCardIcon,
-  EnvelopeIcon,
   MagnifyingGlassIcon,
   PlayIcon,
   UserIcon
 } from '@heroicons/vue/24/outline'
 import { computed, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import EmailSupport from '../components/EmailSupport.vue'
 import LiveChat from '../components/LiveChat.vue'
 import PhoneSupport from '../components/PhoneSupport.vue'
 
@@ -491,9 +474,5 @@ const scrollToSection = (sectionId: string) => {
 
 const filterFAQs = () => {
   // This function is called on input, filtering is handled by computed property
-}
-
-const sendEmail = () => {
-  window.location.href = 'mailto:support@cvanalyzer.com'
 }
 </script>
