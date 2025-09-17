@@ -3,6 +3,7 @@ import { auth } from './es/auth/es.auth.local'
 import { dashboard } from './es/dashboard/es.dashboard.local'
 import { employees } from './es/employees/es.employees.local'
 import { common } from './es/es.common.local'
+import { footer } from './es/es.footer.local'
 import { navigation } from './es/es.navigation.local'
 import { roles } from './es/es.roles.local'
 import { help } from './es/help/es.help.local'
@@ -27,5 +28,6 @@ export const es = {
   recruitment,
   employees,
   account,
-  common
+  common,
+  footer
 }

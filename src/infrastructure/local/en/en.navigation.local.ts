@@ -5,5 +5,6 @@ export const navigation = {
   dashboard: 'Dashboard',
   recruitment: 'Recruitment',
   employees: 'Employees',
-  settings: 'Settings'
+  settings: 'Settings',
+  changeLanguage: 'Change Language'
 }
