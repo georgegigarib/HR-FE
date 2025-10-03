@@ -106,7 +106,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 import CompanyLogo from '@/presentation/shared/CompanyLogo.vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { publicNavigationItems } from '../../../router/navigation'
-import LanguageToggle from '@/presentation/common/LanguageToggle.vue'
+import LanguageToggle from '@/presentation/shared/LanguageToggle.vue'
 
 const route = useRoute()
 const isMobileMenuOpen = ref(false)

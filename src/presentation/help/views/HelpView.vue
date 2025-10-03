@@ -44,7 +44,7 @@
 import { ref } from 'vue'
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 import PublicLayout from '@/presentation/layouts/PublicLayout.vue'
-import HeroSection from '@/presentation/common/HeroSection.vue'
+import HeroSection from '@/presentation/shared/HeroSection.vue'
 import QuickLinksSection from '../components/QuickLinksSection.vue'
 import FAQContainer from '../components/FAQContainer.vue'
 import ContactSection from '../components/ContactSection.vue'
