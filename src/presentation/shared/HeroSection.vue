@@ -1,6 +1,6 @@
 <template>
   <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="text-center px-8 mx-auto mx-w-7xl">
       <slot />
     </div>
   </section>

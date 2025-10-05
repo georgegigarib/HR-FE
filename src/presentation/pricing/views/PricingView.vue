@@ -1,41 +1,6 @@
 <template>
   <PublicLayout>
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          {{ $t('pricing.hero.title') }}
-        </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-          {{ $t('pricing.hero.subtitle') }}
-        </p>
-
-        <!-- Billing Toggle -->
-        <div class="flex items-center justify-center mb-12">
-          <span class="text-gray-600 mr-3">{{ $t('pricing.billing.monthly') }}</span>
-          <button
-            @click="isAnnual = !isAnnual"
-            :class="[
-              'relative inline-flex h-6 w-11 items-center rounded-full transition-colors',
-              isAnnual ? 'bg-blue-600' : 'bg-gray-200'
-            ]"
-          >
-            <span
-              :class="[
-                'inline-block h-4 w-4 transform rounded-full bg-white transition-transform',
-                isAnnual ? 'translate-x-6' : 'translate-x-1'
-              ]"
-            />
-          </button>
-          <span class="text-gray-600 ml-3">
-            {{ $t('pricing.billing.annual') }}
-            <span class="text-green-600 font-medium ml-1">
-              ({{ $t('pricing.billing.save20') }})
-            </span>
-          </span>
-        </div>
-      </div>
-    </section>
+    <PricingIntro />
 
     <!-- Pricing Plans -->
     <section class="py-20">
@@ -423,6 +388,7 @@ import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { toast } from 'vue3-toastify'
 import CTASection from '../components/CTASection.vue'
+import PricingIntro from '../components/PricingIntro.vue'
 
 const { t } = useI18n()
 const router = useRouter()
