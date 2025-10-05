@@ -1,60 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <router-link to="/" class="flex items-center space-x-2">
-              <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span class="text-white font-bold text-sm">HR</span>
-              </div>
-              <span class="text-xl font-bold text-gray-900">CVAnalyzer</span>
-            </router-link>
-          </div>
-          
-          <!-- Navigation Links -->
-          <div class="hidden md:flex items-center space-x-8">
-            <router-link
-              to="/services"
-              class="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {{ $t('navigation.services') }}
-            </router-link>
-            <router-link
-              to="/pricing"
-              class="text-blue-600 font-medium"
-            >
-              {{ $t('navigation.pricing') }}
-            </router-link>
-            <router-link
-              to="/help"
-              class="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {{ $t('navigation.help') }}
-            </router-link>
-          </div>
-          
-          <!-- Auth Buttons -->
-          <div class="flex items-center space-x-4">
-            <router-link
-              to="/login"
-              class="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {{ $t('auth.login') }}
-            </router-link>
-            <BaseButton
-              variant="primary"
-              @click="$router.push('/register')"
-            >
-              {{ $t('auth.register.title') }}
-            </BaseButton>
-          </div>
-        </div>
-      </div>
-    </nav>
-
+  <PublicLayout>
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -64,7 +9,7 @@
         <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
           {{ $t('pricing.hero.subtitle') }}
         </p>
-        
+
         <!-- Billing Toggle -->
         <div class="flex items-center justify-center mb-12">
           <span class="text-gray-600 mr-3">{{ $t('pricing.billing.monthly') }}</span>
@@ -109,7 +54,7 @@
               <p class="text-gray-600 mb-8">
                 {{ $t('pricing.plans.trial.description') }}
               </p>
-              
+
               <!-- Features -->
               <ul class="space-y-4 mb-8 text-left">
                 <li class="flex items-center">
@@ -126,15 +71,13 @@
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.trial.features.support') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.trial.features.support')
+                  }}</span>
                 </li>
               </ul>
-              
-              <BaseButton 
-                variant="outline" 
-                class="w-full"
-                @click="selectPlan('trial')"
-              >
+
+              <BaseButton variant="outline" class="w-full" @click="selectPlan('trial')">
                 {{ $t('pricing.plans.trial.cta') }}
               </BaseButton>
             </div>
@@ -155,7 +98,7 @@
               <p class="text-gray-600 mb-8">
                 {{ $t('pricing.plans.starter.description') }}
               </p>
-              
+
               <!-- Features -->
               <ul class="space-y-4 mb-8 text-left">
                 <li class="flex items-center">
@@ -164,7 +107,9 @@
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.starter.features.users') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.starter.features.users')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
@@ -172,19 +117,19 @@
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.starter.features.export') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.starter.features.export')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.starter.features.support') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.starter.features.support')
+                  }}</span>
                 </li>
               </ul>
-              
-              <BaseButton 
-                variant="outline" 
-                class="w-full"
-                @click="selectPlan('starter')"
-              >
+
+              <BaseButton variant="outline" class="w-full" @click="selectPlan('starter')">
                 {{ $t('pricing.plans.starter.cta') }}
               </BaseButton>
             </div>
@@ -198,7 +143,7 @@
                 {{ $t('pricing.plans.professional.badge') }}
               </span>
             </div>
-            
+
             <div class="text-center">
               <h3 class="text-2xl font-bold text-gray-900 mb-2">
                 {{ $t('pricing.plans.professional.name') }}
@@ -207,45 +152,55 @@
                 <span class="text-4xl font-bold text-gray-900">
                   ${{ isAnnual ? '79' : '99' }}
                 </span>
-                <span class="text-gray-600 ml-1">/{{ $t('pricing.plans.professional.period') }}</span>
+                <span class="text-gray-600 ml-1"
+                  >/{{ $t('pricing.plans.professional.period') }}</span
+                >
               </div>
               <p class="text-gray-600 mb-8">
                 {{ $t('pricing.plans.professional.description') }}
               </p>
-              
+
               <!-- Features -->
               <ul class="space-y-4 mb-8 text-left">
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.professional.features.cvs') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.professional.features.cvs')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.professional.features.users') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.professional.features.users')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.professional.features.ai') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.professional.features.ai')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.professional.features.export') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.professional.features.export')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.professional.features.analytics') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.professional.features.analytics')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.professional.features.support') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.professional.features.support')
+                  }}</span>
                 </li>
               </ul>
-              
-              <BaseButton 
-                variant="primary" 
-                class="w-full"
-                @click="selectPlan('professional')"
-              >
+
+              <BaseButton variant="primary" class="w-full" @click="selectPlan('professional')">
                 {{ $t('pricing.plans.professional.cta') }}
               </BaseButton>
             </div>
@@ -266,44 +221,54 @@
               <p class="text-gray-600 mb-8">
                 {{ $t('pricing.plans.enterprise.description') }}
               </p>
-              
+
               <!-- Features -->
               <ul class="space-y-4 mb-8 text-left">
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.enterprise.features.cvs') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.enterprise.features.cvs')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.enterprise.features.users') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.enterprise.features.users')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.enterprise.features.ai') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.enterprise.features.ai')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.enterprise.features.export') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.enterprise.features.export')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.enterprise.features.analytics') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.enterprise.features.analytics')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.enterprise.features.api') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.enterprise.features.api')
+                  }}</span>
                 </li>
                 <li class="flex items-center">
                   <CheckIcon class="w-5 h-5 text-green-500 mr-3" />
-                  <span class="text-gray-700">{{ $t('pricing.plans.enterprise.features.support') }}</span>
+                  <span class="text-gray-700">{{
+                    $t('pricing.plans.enterprise.features.support')
+                  }}</span>
                 </li>
               </ul>
-              
-              <BaseButton 
-                variant="outline" 
-                class="w-full"
-                @click="selectPlan('enterprise')"
-              >
+
+              <BaseButton variant="outline" class="w-full" @click="selectPlan('enterprise')">
                 {{ $t('pricing.plans.enterprise.cta') }}
               </BaseButton>
             </div>
@@ -323,7 +288,7 @@
             {{ $t('pricing.comparison.subtitle') }}
           </p>
         </div>
-        
+
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
           <div class="overflow-x-auto">
             <table class="w-full">
@@ -352,34 +317,50 @@
                     {{ feature.name }}
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-gray-600">
-                    <component 
+                    <component
                       v-if="typeof feature.trial === 'boolean'"
-                      :is="getFeatureIcon(feature.trial)" 
-                      :class="feature.trial ? 'w-5 h-5 text-green-500 mx-auto' : 'w-5 h-5 text-red-500 mx-auto'"
+                      :is="getFeatureIcon(feature.trial)"
+                      :class="
+                        feature.trial
+                          ? 'w-5 h-5 text-green-500 mx-auto'
+                          : 'w-5 h-5 text-red-500 mx-auto'
+                      "
                     />
                     <span v-else class="font-medium text-gray-900">{{ feature.trial }}</span>
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-gray-600">
-                    <component 
+                    <component
                       v-if="typeof feature.starter === 'boolean'"
-                      :is="getFeatureIcon(feature.starter)" 
-                      :class="feature.starter ? 'w-5 h-5 text-green-500 mx-auto' : 'w-5 h-5 text-red-500 mx-auto'"
+                      :is="getFeatureIcon(feature.starter)"
+                      :class="
+                        feature.starter
+                          ? 'w-5 h-5 text-green-500 mx-auto'
+                          : 'w-5 h-5 text-red-500 mx-auto'
+                      "
                     />
                     <span v-else class="font-medium text-gray-900">{{ feature.starter }}</span>
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-gray-600 bg-blue-50">
-                    <component 
+                    <component
                       v-if="typeof feature.professional === 'boolean'"
-                      :is="getFeatureIcon(feature.professional)" 
-                      :class="feature.professional ? 'w-5 h-5 text-green-500 mx-auto' : 'w-5 h-5 text-red-500 mx-auto'"
+                      :is="getFeatureIcon(feature.professional)"
+                      :class="
+                        feature.professional
+                          ? 'w-5 h-5 text-green-500 mx-auto'
+                          : 'w-5 h-5 text-red-500 mx-auto'
+                      "
                     />
                     <span v-else class="font-medium text-gray-900">{{ feature.professional }}</span>
                   </td>
                   <td class="px-6 py-4 text-center text-sm text-gray-600">
-                    <component 
+                    <component
                       v-if="typeof feature.enterprise === 'boolean'"
-                      :is="getFeatureIcon(feature.enterprise)" 
-                      :class="feature.enterprise ? 'w-5 h-5 text-green-500 mx-auto' : 'w-5 h-5 text-red-500 mx-auto'"
+                      :is="getFeatureIcon(feature.enterprise)"
+                      :class="
+                        feature.enterprise
+                          ? 'w-5 h-5 text-green-500 mx-auto'
+                          : 'w-5 h-5 text-red-500 mx-auto'
+                      "
                     />
                     <span v-else class="font-medium text-gray-900">{{ feature.enterprise }}</span>
                   </td>
@@ -402,26 +383,22 @@
             {{ $t('pricing.faq.subtitle') }}
           </p>
         </div>
-        
+
         <div class="space-y-4">
-          <div 
-            v-for="faq in pricingFAQs" 
-            :key="faq.id"
-            class="border border-gray-200 rounded-lg"
-          >
+          <div v-for="faq in pricingFAQs" :key="faq.id" class="border border-gray-200 rounded-lg">
             <button
               @click="toggleFAQ(faq.id)"
               class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
             >
               <span class="font-medium text-gray-900">{{ faq.question }}</span>
-              <ChevronDownIcon 
+              <ChevronDownIcon
                 :class="[
                   'w-5 h-5 text-gray-500 transition-transform',
                   openFAQs.includes(faq.id) ? 'rotate-180' : ''
                 ]"
               />
             </button>
-            <div 
+            <div
               v-if="openFAQs.includes(faq.id)"
               class="px-6 pb-4 text-gray-600 border-t border-gray-100"
             >
@@ -432,51 +409,26 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-blue-600">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
-          {{ $t('pricing.cta.title') }}
-        </h2>
-        <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-          {{ $t('pricing.cta.subtitle') }}
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <BaseButton 
-            variant="secondary" 
-            size="lg"
-            @click="$router.push('/register')"
-          >
-            {{ $t('pricing.cta.startTrial') }}
-          </BaseButton>
-          <BaseButton 
-            variant="outline" 
-            size="lg"
-            class="text-white border-white hover:bg-white hover:text-blue-600"
-            @click="contactSales"
-          >
-            {{ $t('pricing.cta.contactSales') }}
-          </BaseButton>
-        </div>
-      </div>
-    </section>
-  </div>
+    <CTASection />
+  </PublicLayout>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router';
-import { CheckIcon, XMarkIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
-import BaseButton from '@/components/ui/BaseButton.vue';
-import BaseCard from '@/components/ui/BaseCard.vue';
-import { toast } from 'vue3-toastify';
+import BaseButton from '@/components/ui/BaseButton.vue'
+import BaseCard from '@/components/ui/BaseCard.vue'
+import PublicLayout from '@/presentation/layouts/PublicLayout.vue'
+import { CheckIcon, ChevronDownIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+import { toast } from 'vue3-toastify'
+import CTASection from '../components/CTASection.vue'
 
-const { t } = useI18n();
-const router = useRouter();
+const { t } = useI18n()
+const router = useRouter()
 
-const isAnnual = ref(false);
-const openFAQs = ref<string[]>([]);
+const isAnnual = ref(false)
+const openFAQs = ref<string[]>([])
 
 const comparisonFeatures = computed(() => [
   {
@@ -528,7 +480,7 @@ const comparisonFeatures = computed(() => [
     professional: t('pricing.comparison.table.prioritySupport'),
     enterprise: t('pricing.comparison.table.dedicatedSupport')
   }
-]);
+])
 
 const pricingFAQs = computed(() => [
   {
@@ -556,34 +508,28 @@ const pricingFAQs = computed(() => [
     question: t('pricing.faq.q5.question'),
     answer: t('pricing.faq.q5.answer')
   }
-]);
+])
 
 const getFeatureIcon = (value: any) => {
   if (typeof value === 'boolean') {
-    return value ? CheckIcon : XMarkIcon;
+    return value ? CheckIcon : XMarkIcon
   }
-  return 'span';
-};
-
-
+  return 'span'
+}
 
 const toggleFAQ = (id: string) => {
-  const index = openFAQs.value.indexOf(id);
+  const index = openFAQs.value.indexOf(id)
   if (index > -1) {
-    openFAQs.value.splice(index, 1);
+    openFAQs.value.splice(index, 1)
   } else {
-    openFAQs.value.push(id);
+    openFAQs.value.push(id)
   }
-};
+}
 
 const selectPlan = (plan: string) => {
-  toast.success(t('pricing.messages.planSelected', { plan }));
-  router.push('/register');
-};
-
-const contactSales = () => {
-  window.location.href = 'mailto:sales@cvanalyzer.com?subject=Enterprise Plan Inquiry';
-};
+  toast.success(t('pricing.messages.planSelected', { plan }))
+  router.push('/register')
+}
 </script>
 
 <style scoped>
