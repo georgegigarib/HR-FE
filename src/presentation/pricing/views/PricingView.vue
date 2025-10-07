@@ -337,43 +337,7 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            {{ $t('pricing.faq.title') }}
-          </h2>
-          <p class="text-xl text-gray-600">
-            {{ $t('pricing.faq.subtitle') }}
-          </p>
-        </div>
-
-        <div class="space-y-4">
-          <div v-for="faq in pricingFAQs" :key="faq.id" class="border border-gray-200 rounded-lg">
-            <button
-              @click="toggleFAQ(faq.id)"
-              class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-            >
-              <span class="font-medium text-gray-900">{{ faq.question }}</span>
-              <ChevronDownIcon
-                :class="[
-                  'w-5 h-5 text-gray-500 transition-transform',
-                  openFAQs.includes(faq.id) ? 'rotate-180' : ''
-                ]"
-              />
-            </button>
-            <div
-              v-if="openFAQs.includes(faq.id)"
-              class="px-6 pb-4 text-gray-600 border-t border-gray-100"
-            >
-              <div class="pt-4" v-html="faq.answer"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <PricingFAQ />
     <CTASection />
   </PublicLayout>
 </template>
@@ -382,19 +346,19 @@
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseCard from '@/components/ui/BaseCard.vue'
 import PublicLayout from '@/presentation/layouts/PublicLayout.vue'
-import { CheckIcon, ChevronDownIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { CheckIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { toast } from 'vue3-toastify'
 import CTASection from '../components/CTASection.vue'
+import PricingFAQ from '../components/PricingFAQ.vue'
 import PricingIntro from '../components/PricingIntro.vue'
 
 const { t } = useI18n()
 const router = useRouter()
 
 const isAnnual = ref(false)
-const openFAQs = ref<string[]>([])
 
 const comparisonFeatures = computed(() => [
   {
@@ -448,48 +412,11 @@ const comparisonFeatures = computed(() => [
   }
 ])
 
-const pricingFAQs = computed(() => [
-  {
-    id: 'pricing-1',
-    question: t('pricing.faq.q1.question'),
-    answer: t('pricing.faq.q1.answer')
-  },
-  {
-    id: 'pricing-2',
-    question: t('pricing.faq.q2.question'),
-    answer: t('pricing.faq.q2.answer')
-  },
-  {
-    id: 'pricing-3',
-    question: t('pricing.faq.q3.question'),
-    answer: t('pricing.faq.q3.answer')
-  },
-  {
-    id: 'pricing-4',
-    question: t('pricing.faq.q4.question'),
-    answer: t('pricing.faq.q4.answer')
-  },
-  {
-    id: 'pricing-5',
-    question: t('pricing.faq.q5.question'),
-    answer: t('pricing.faq.q5.answer')
-  }
-])
-
 const getFeatureIcon = (value: any) => {
   if (typeof value === 'boolean') {
     return value ? CheckIcon : XMarkIcon
   }
   return 'span'
-}
-
-const toggleFAQ = (id: string) => {
-  const index = openFAQs.value.indexOf(id)
-  if (index > -1) {
-    openFAQs.value.splice(index, 1)
-  } else {
-    openFAQs.value.push(id)
-  }
 }
 
 const selectPlan = (plan: string) => {
