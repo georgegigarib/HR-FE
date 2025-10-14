@@ -40,11 +40,18 @@
 
 <script setup lang="ts">
 import HeroSection from '@/presentation/shared/HeroSection.vue'
-import { ref } from 'vue'
 
-const isAnnual = ref(false)
+interface Props {
+  isAnnual: boolean
+}
+
+defineProps<Props>()
+
+const emit = defineEmits<{
+  toggleAnnual: []
+}>()
 
 const toggleAnnual = () => {
-  isAnnual.value = !isAnnual.value
+  emit('toggleAnnual')
 }
 </script>
