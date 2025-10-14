@@ -1,6 +1,6 @@
 export const enterprise = {
   name: 'Enterprise',
-  period: '/mes',
+  period: 'mes',
   description: 'Solución completa para grandes organizaciones',
   cta: 'Contactar ventas',
   features: {

@@ -1,7 +1,7 @@
 export const professional = {
   badge: 'Most Popular',
   name: 'Professional',
-  period: '/month',
+  period: 'month',
   description: 'For HR teams that need advanced analysis',
   cta: 'Go Professional',
   features: {
