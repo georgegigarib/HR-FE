@@ -1,7 +1,7 @@
 <template>
   <PublicLayout>
-    <PricingIntro :is-annual="isAnnual" @toggle-annual="toggleAnnual"/>
-    <PricingPlans :is-annual="isAnnual"/>
+    <PricingIntro :is-annual="isAnnual" @toggle-annual="toggleAnnual" />
+    <PricingPlans :is-annual="isAnnual" />
 
     <!-- Features Comparison -->
     <section class="py-20 bg-gray-50">
@@ -105,8 +105,9 @@
 
 <script setup lang="ts">
 import PublicLayout from '@/presentation/layouts/PublicLayout.vue'
+import { useToggleState } from '@/presentation/shared/composables/useToggleState'
 import { CheckIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CTASection from '../components/CTASection.vue'
 import PricingFAQ from '../components/PricingFAQ.vue'
@@ -115,12 +116,7 @@ import PricingPlans from '../components/PricingPlans.vue'
 
 const { t } = useI18n()
 
-const isAnnual = ref(false)
-
-const toggleAnnual = () => {
-  isAnnual.value = !isAnnual.value
-}
-
+const { state: isAnnual, toggle: toggleAnnual } = useToggleState(false)
 
 const comparisonFeatures = computed(() => [
   {
