@@ -1,13 +1,16 @@
 <template>
   <BaseButton :variant="variant" class="w-full" @click="selectPlan">
-    {{ $t(cta) }}
+    {{ t(cta) }}
   </BaseButton>
 </template>
 
 <script setup lang="ts">
 import BaseButton from '@/components/ui/BaseButton.vue'
 import { computed } from 'vue'
-import type { PricingPlan } from '../data/pricingPlans';
+import { useI18n } from 'vue-i18n'
+import type { PricingPlan } from '@/presentation/pricing/data/pricingPlans'
+
+const { t } = useI18n()
 
 interface Props {
   id: PricingPlan['id']

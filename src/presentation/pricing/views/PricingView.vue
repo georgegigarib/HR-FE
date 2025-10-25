@@ -8,10 +8,10 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            {{ $t('pricing.comparison.title') }}
+            {{ t('pricing.comparison.title') }}
           </h2>
           <p class="text-xl text-gray-600">
-            {{ $t('pricing.comparison.subtitle') }}
+            {{ t('pricing.comparison.subtitle') }}
           </p>
         </div>
 
@@ -21,19 +21,19 @@
               <thead class="bg-gray-50">
                 <tr>
                   <th class="px-6 py-4 text-left text-sm font-medium text-gray-900">
-                    {{ $t('pricing.comparison.features') }}
+                    {{ t('pricing.comparison.features') }}
                   </th>
                   <th class="px-6 py-4 text-center text-sm font-medium text-gray-900">
-                    {{ $t('pricing.plans.trial.name') }}
+                    {{ t('pricing.plans.trial.name') }}
                   </th>
                   <th class="px-6 py-4 text-center text-sm font-medium text-gray-900">
-                    {{ $t('pricing.plans.starter.name') }}
+                    {{ t('pricing.plans.starter.name') }}
                   </th>
                   <th class="px-6 py-4 text-center text-sm font-medium text-gray-900 bg-blue-50">
-                    {{ $t('pricing.plans.professional.name') }}
+                    {{ t('pricing.plans.professional.name') }}
                   </th>
                   <th class="px-6 py-4 text-center text-sm font-medium text-gray-900">
-                    {{ $t('pricing.plans.enterprise.name') }}
+                    {{ t('pricing.plans.enterprise.name') }}
                   </th>
                 </tr>
               </thead>
@@ -109,10 +109,10 @@ import { useToggleState } from '@/presentation/shared/composables/useToggleState
 import { CheckIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import CTASection from '../components/CTASection.vue'
-import PricingFAQ from '../components/PricingFAQ.vue'
-import PricingIntro from '../components/PricingIntro.vue'
-import PricingPlans from '../components/PricingPlans.vue'
+import CTASection from '@/presentation/pricing/components/CTASection.vue'
+import PricingFAQ from '@/presentation/pricing/components/PricingFAQ.vue'
+import PricingIntro from '@/presentation/pricing/components/PricingIntro.vue'
+import PricingPlans from '@/presentation/pricing/components/PricingPlans.vue'
 
 const { t } = useI18n()
 

@@ -32,11 +32,11 @@
 <script setup lang="ts">
 import BaseCard from '@/components/ui/BaseCard.vue'
 import { computed } from 'vue'
-import type { PricingPlan } from '../data/pricingPlans'
-import PricingCardBadge from './PricingCardBadge.vue'
-import PricingCardButton from './PricingCardButton.vue'
-import PricingCardFeatures from './PricingCardFeatures.vue'
-import PricingCardHeader from './PricingCardHeader.vue'
+import type { PricingPlan } from '@/presentation/pricing/data/pricingPlans'
+import PricingCardBadge from '@/presentation/pricing/components/PricingCardBadge.vue'
+import PricingCardButton from '@/presentation/pricing/components/PricingCardButton.vue'
+import PricingCardFeatures from '@/presentation/pricing/components/PricingCardFeatures.vue'
+import PricingCardHeader from '@/presentation/pricing/components/PricingCardHeader.vue'
 
 interface Props {
   plan: PricingPlan

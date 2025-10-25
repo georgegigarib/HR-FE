@@ -20,8 +20,8 @@
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { toast } from 'vue3-toastify'
-import { plans, type PricingPlan } from '../data/pricingPlans'
-import PricingCard from './PricingCard.vue'
+import { plans, type PricingPlan } from '@/presentation/pricing/data/pricingPlans'
+import PricingCard from '@/presentation/pricing/components/PricingCard.vue'
 
 const { t } = useI18n()
 const router = useRouter()

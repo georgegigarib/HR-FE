@@ -1,17 +1,17 @@
 <template>
   <HeroSection>
-    
+
     <h1 class="text-black font-bold mb-6 text-4xl sm:text-5xl md:text-6xl">
-      {{ $t('pricing.hero.title') }}
+      {{ t('pricing.hero.title') }}
     </h1>
     <p class="text-gray-500 mx-auto mb-8 md:mt-5 text-lg md:text-xl">
-      {{ $t('pricing.hero.subtitle') }}
+      {{ t('pricing.hero.subtitle') }}
     </p>
 
     <!-- Billing Toggle -->
     <div class="flex justify-center items-center text-gray-500">
       <p class="mr-3">
-        {{ $t('pricing.billing.monthly') }}
+        {{ t('pricing.billing.monthly') }}
       </p>
 
       <button
@@ -30,8 +30,8 @@
       </button>
 
       <p class="ml-3">
-        {{ $t('pricing.billing.annual') }}
-        <span class="text-green-600">({{ $t('pricing.billing.save20') }})</span>
+        {{ t('pricing.billing.annual') }}
+        <span class="text-green-600">({{ t('pricing.billing.save20') }})</span>
       </p>
     </div>
 
@@ -40,6 +40,9 @@
 
 <script setup lang="ts">
 import HeroSection from '@/presentation/shared/HeroSection.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 interface Props {
   isAnnual: boolean
