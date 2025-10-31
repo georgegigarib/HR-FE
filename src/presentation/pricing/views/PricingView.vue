@@ -9,6 +9,7 @@
 </template>
 
 <script setup lang="ts">
+import PublicLayout from '@/presentation/layouts/PublicLayout.vue'
 import CTASection from '@/presentation/pricing/components/CTASection.vue'
 import PricingFAQ from '@/presentation/pricing/components/PricingFAQ.vue'
 import PricingFeatures from '@/presentation/pricing/components/PricingFeatures.vue'
