@@ -1,7 +1,7 @@
 export const professional = {
   badge: 'Más popular',
   name: 'Professional',
-  period: '/mes',
+  period: 'mes',
   description: 'Para equipos de RRHH que necesitan análisis avanzados',
   cta: 'Ir a Professional',
   features: {

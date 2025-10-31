@@ -11,16 +11,11 @@ import { vueI18n } from './infrastructure/plugins/vue-i18n'
 
 const app = createApp(App)
 
-// Configurar Pinia
-app.use(createPinia())
+app
+  .use(createPinia())
+  .use(router)
+  .use(vueI18n)
 
-// Configurar Router
-app.use(router)
-
-// Configurar i18n
-app.use(vueI18n)
-
-// Configurar Vue3Toastify
 app.use(Vue3Toastify, {
   autoClose: 3000,
   position: 'top-right',

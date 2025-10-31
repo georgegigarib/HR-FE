@@ -1,6 +1,6 @@
 export const starter = {
   name: 'Starter',
-  period: '/mes',
+  period: 'mes',
   description: 'Ideal para pequeñas empresas y reclutadores independientes',
   cta: 'Comenzar',
   features: {
